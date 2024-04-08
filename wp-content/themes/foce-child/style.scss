@@ -1,0 +1,22 @@
+.banner {
+    display: flex;
+    position: relative;
+    object-fit: contain;
+    height: 800px;
+
+}
+
+.banner_video {
+    position: absolute;
+    bottom: 0px;
+    min-width: 1440px;
+    z-index: 1;
+    opacity: 1;
+    left: auto;
+}
+.banner_logo {
+    position: sticky;
+    top: 80px;
+    z-index: 10;
+    opacity: 1;
+}
