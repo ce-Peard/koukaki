@@ -20,3 +20,98 @@
     z-index: 10;
     opacity: 1;
 }
+
+// section {
+//     animation: fadein 2s;
+// }
+
+// @keyframes fadein {
+//     from {
+//         opacity: 0;
+//     }
+//     to {
+//         opacity: 1;
+//     }
+// }
+
+        // ROTATION FLEURS
+
+.site-footer::before {
+    animation: rotateSunflower2 10s linear infinite;
+}
+
+@keyframes rotateSunflower2 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.site-footer::after {
+    animation: rotateOrchid 10s linear infinite;
+}
+
+@keyframes rotateOrchid {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.story h2::after {
+    animation: rotateSunflower 10s linear infinite;
+}
+
+@keyframes rotateSunflower {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.story__article::after {
+    animation: rotateHibiscus 10s linear infinite;
+}
+
+@keyframes rotateHibiscus {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#studio h2::before {
+    animation: rotateRandom_flower 10s linear infinite;
+}
+
+@keyframes rotateRandom_flower {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#studio h2::after {
+    animation: rotateFlower 10s linear infinite;
+}
+
+@keyframes rotateFlower {
+     from {
+         transform: rotate(0deg);
+     }
+     to {
+         transform: rotate(360deg);
+     }
+ }
+
