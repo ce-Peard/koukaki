@@ -21,6 +21,7 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="http://localhost/koukaki/wp-content/themes/foce-child/assets/JavaScript/script.js"></script>
 </body>
 </html>
