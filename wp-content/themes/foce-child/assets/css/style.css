@@ -20,6 +20,10 @@
   opacity: 1;
 }
 
+.hidden {
+  display: none;
+}
+
 @keyframes rotateSunflower2 {
   from {
     transform: rotate(0deg);
@@ -106,4 +110,49 @@
 
 .story #place {
   background-image: url("http://localhost/koukaki/wp-content/uploads/2024/04/Studio_Koukaki-image_place.png");
+  z-index: 10;
+  display: flex;
+  position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.story #place .big_cloud {
+  position: absolute;
+  z-index: 100;
+  top: 60px;
+  left: 1031px;
+  filter: blur(15px);
+  opacity: 0.8;
+}
+.story #place .little_cloud {
+  position: absolute;
+  z-index: 100;
+  top: 260px;
+  left: 793px;
+  filter: blur(10px);
+  opacity: 0.8;
+}
+
+@keyframes moveLeftToRight_little {
+  from {
+    left: 493px;
+  }
+  to {
+    left: 793px;
+  }
+}
+@keyframes moveLeftToRight_big {
+  from {
+    left: 793px;
+  }
+  to {
+    left: 1031px;
+  }
+}
+.little_cloud {
+  animation: moveLeftToRight_little 10s linear;
+}
+
+.big_cloud {
+  animation: moveLeftToRight_big 10s linear;
 }
