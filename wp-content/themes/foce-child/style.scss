@@ -1,40 +1,33 @@
-.banner {
-    display: flex;
-    position: relative;
-    object-fit: contain;
-    height: 800px;
+.banner
+  display: flex
+  position: relative
+  object-fit: contain
+  height: 800px
 
-}
+  .banner_video
+    position: absolute
+    bottom: 0px
+    min-width: 1440px
+    z-index: 1
+    opacity: 1
+    left: auto
 
-.banner_video {
-    position: absolute;
-    bottom: 0px;
-    min-width: 1440px;
-    z-index: 1;
-    opacity: 1;
-    left: auto;
-}
-.banner_logo {
-    position: sticky;
-    top: 80px;
-    z-index: 10;
-    opacity: 1;
-}
+  .banner_logo
+    position: sticky
+    top: 80px
+    z-index: 10
+    opacity: 1
 
-// section {
-//     animation: fadein 2s;
-// }
+    
+// FADE IN SECTIONS
 
-// @keyframes fadein {
-//     from {
-//         opacity: 0;
-//     }
-//     to {
-//         opacity: 1;
-//     }
-// }
-
-        // ROTATION FLEURS
+.fade-in
+    opacity: 0
+    transition: opacity 1s ease-in-out
+    .visible
+        opacity: 1
+ 
+    // ROTATION FLEURS
 
 .site-footer::before {
     animation: rotateSunflower2 10s linear infinite;
@@ -49,7 +42,7 @@
     }
 }
 
-.site-footer::after {
+.site-footer::after { 
     animation: rotateOrchid 10s linear infinite;
 }
 
@@ -74,7 +67,6 @@
         transform: rotate(360deg);
     }
 }
-
 
 .story__article::after {
     animation: rotateHibiscus 10s linear infinite;
@@ -114,4 +106,5 @@
          transform: rotate(360deg);
      }
  }
+
 
