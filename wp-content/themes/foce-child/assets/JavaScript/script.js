@@ -15,6 +15,20 @@ window.addEventListener("load", function () {
   });
 });
 
+// ANIMATION TITRES
+
+// window.addEventListener("scroll", function () {
+//   var element = document.getElementById("story");
+//   var position = element.getBoundingClientRect();
+
+//   // Check if the element is in the viewport
+//   if (position.top < window.innerHeight && position.bottom >= 0) {
+//     document.querySelector("h2").classList.add("scroll-animation", "show");
+//   } else {
+//     document.querySelector("h2").classList.remove("scroll-animation", "show");
+//   }
+// });
+
 // SCROLL NUAGES
 
 // Récupérer les éléments des nuages
