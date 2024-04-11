@@ -1,20 +1,24 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var fadeIns = document.querySelectorAll('.fade-in');
-    function checkVisibility() {
-        fadeIns.forEach(function(fadeIn) {
-            var sectionOffset = fadeIn.offsetTop;
-            var windowHeight = window.innerHeight;
-            var scroll = window.scrollY || window.pageYOffset;
+document.addEventListener("DOMContentLoaded", () => {
+  const fadeIns = document.querySelectorAll(".fade-in");
 
-            if (scroll + windowHeight > sectionOffset) {
-                fadeIn.classList.add('visible');
-            }
-        });
-    }
+  const checkVisibility = () => {
+    fadeIns.forEach((fadeIn) => {
+      const sectionOffset = fadeIn.offsetTop;
+      const windowHeight = window.innerHeight;
+      const scroll = window.scrollY || window.pageYOffset;
 
-    window.addEventListener('scroll', checkVisibility);
-    window.addEventListener('resize', checkVisibility);
+      if (scroll + windowHeight > sectionOffset) {
+        fadeIn.classList.add("visible");
+      }
+    });
+  };
 
+  const handleScrollAndResize = () => {
     checkVisibility();
-});
+  };
 
+  window.addEventListener("scroll", handleScrollAndResize);
+  window.addEventListener("resize", handleScrollAndResize);
+
+  checkVisibility();
+});

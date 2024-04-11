@@ -1,0 +1,109 @@
+.banner {
+  display: flex;
+  position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 800px;
+}
+.banner .banner_video {
+  position: absolute;
+  bottom: 0px;
+  min-width: 1440px;
+  z-index: 1;
+  opacity: 1;
+  left: auto;
+}
+.banner .banner_logo {
+  position: sticky;
+  top: 80px;
+  z-index: 10;
+  opacity: 1;
+}
+
+@keyframes rotateSunflower2 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateOrchid {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateSunflower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateHibiscus {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateRandom_flower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateFlower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateHibiscus_footer {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.site-footer::before {
+  animation: rotateSunflower2 10s linear infinite;
+}
+
+.site-footer::after {
+  animation: rotateOrchid 10s linear infinite;
+}
+
+.story h2::after {
+  animation: rotateSunflower 10s linear infinite;
+}
+
+.story__article::after {
+  animation: rotateHibiscus 10s linear infinite;
+}
+
+#studio h2::before {
+  animation: rotateRandom_flower 10s linear infinite;
+}
+
+#studio h2::after {
+  animation: rotateFlower 10s linear infinite;
+}
+
+.site-footer ul::after {
+  animation: rotateHibiscus_footer 10s linear infinite;
+}
+
+.story #place {
+  background-image: url("http://localhost/koukaki/wp-content/uploads/2024/04/Studio_Koukaki-image_place.png");
+}
