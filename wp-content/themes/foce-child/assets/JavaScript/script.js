@@ -17,17 +17,48 @@ window.addEventListener("load", function () {
 
 // ANIMATION TITRES
 
-// window.addEventListener("scroll", function () {
-//   var element = document.getElementById("story");
-//   var position = element.getBoundingClientRect();
+// const h2Elements = document.querySelectorAll('h2');
 
-//   // Check if the element is in the viewport
-//   if (position.top < window.innerHeight && position.bottom >= 0) {
-//     document.querySelector("h2").classList.add("scroll-animation", "show");
-//   } else {
-//     document.querySelector("h2").classList.remove("scroll-animation", "show");
-//   }
+// const observer = new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             entry.target.classList.add('show');
+//         }
+//     });
 // });
+
+// h2Elements.forEach(h2 => {
+//     observer.observe(h2);
+// });
+
+// Sélectionner les éléments à observer
+const targets = document.querySelectorAll('.scroll-animation');
+
+// Options pour l'Intersection Observer
+const options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.5 // 0.5 signifie que l'élément sera visible lorsque la moitié de celui-ci est dans la vue
+};
+
+// Fonction de callback pour l'Intersection Observer
+const callback = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+};
+
+// Créer l'instance de l'Intersection Observer
+const observer = new IntersectionObserver(callback, options);
+
+// Observer chaque élément cible
+targets.forEach(target => {
+  observer.observe(target);
+});
+
 
 // SCROLL NUAGES
 
