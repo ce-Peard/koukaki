@@ -13,7 +13,7 @@ get_header();
     <section class="story hidden">
         <h2>
             <span class="scroll-animation">
-            L'histoire
+                L'histoire
             </span>
         </h2>
         <article id="" class="story__article">
@@ -31,33 +31,22 @@ get_header();
         ?>
         <article id="characters">
             <div class="main-character">
-                <h3>Les personnages</h3>
-                <?php
-                $main_character = $characters_query->posts[0];
-                echo '<figure>';
-                echo get_the_post_thumbnail($main_character->ID, 'full');
-                echo '<figcaption>' . $main_character->post_title . '</figcaption>';
-                echo '</figure>';
-                $characters_query->next_post();
-                ?>
+                <h3>
+                    <span class="scroll-animation">
+                        Les personnages
+                    </span>
+                </h3>
+                <php get_template_part ('template_parts/characters') ?>
             </div>
-            <div class="other-characters">
-                <?php
-                while ($characters_query->have_posts()) {
-                    $characters_query->the_post();
-                    echo '<figure>';
-                    echo get_the_post_thumbnail(get_the_ID(), 'full');
-                    echo '<figcaption>';
-                    the_title();
-                    echo '</figcaption>';
-                    echo '</figure>';
-                }
-                ?>
-            </div>
+
         </article>
         <article id="place">
             <div>
-                <h3>Le Lieu</h3>
+                <h3>
+                    <span class="scroll-animation">
+                        Le Lieu
+                    </span>
+                </h3>
                 <p><?php echo get_theme_mod('place'); ?></p>
                 <img src="http://localhost/koukaki/wp-content/uploads/2024/04/little_cloud.png" alt="Little Cloud" class="little_cloud">
                 <img src="http://localhost/koukaki/wp-content/uploads/2024/04/big_cloud.png" alt="Big Cloud" class="big_cloud">
@@ -70,7 +59,7 @@ get_header();
     <section id="studio" class="hidden">
         <h2>
             <span class="scroll-animation">
-            Studio Koukaki
+                Studio Koukaki
             </span>
         </h2>
         <div>

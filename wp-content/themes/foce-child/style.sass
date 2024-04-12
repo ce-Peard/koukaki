@@ -1,3 +1,5 @@
+//ANIMATION VIDEO
+
 .banner
   display: flex
   position: relative
@@ -17,6 +19,43 @@
     top: 80px
     z-index: 10
     opacity: 1
+    animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out
+
+  @keyframes move-up
+    0%
+      transform: translateY(600px)
+      opacity: 0
+
+    100%
+      transform: translateY(0)
+
+  @keyframes float
+    0%
+      transform: translate3d(6px,6px,0)
+
+    12%
+      transform: translate3d(0px,6px,0)
+
+    24%
+      transform: translate3d(6px,-4px,0)
+
+    36%
+      transform: translate3d(6px,0px,0)
+
+    48%
+      transform: translate3d(-4px,-6px,0)
+
+    60%
+      transform: translate3d(0px,-4px,0)
+
+    72%
+      transform: translate3d(-8px,6px,0)
+
+    84%
+      transform: translate3d(-4px,0px,0)
+
+    100%
+      transform: translate3d(6px,6px,0)
 
 // FADE IN SECTIONS
 
@@ -28,10 +67,27 @@
 .scroll-animation
   opacity: 0
   transform: translateY(100px)
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out
+  transition: 10s
+  transition-delay: 0,5s
+  animation: animatedTitle 1s forwards
   &.visible
     opacity: 1
     transform: translateY(0)
+
+@keyframes animatedTitle
+  0%
+    transform: translate3d(-50%, 50%, 0)
+    opacity: 0
+  100%
+    transform: translate3d(-50%, -50%, 0)
+    opacity: 1
+
+  //   animation: move-up_title 2s 300ms both, float 6s 2s infinite ease-in-out
+
+  // @keyframes move-up_title
+  //   0%
+  //     transform: translateY(600px)
+  //     opacity: 0
 
   // ROTATION FLEURS
 
