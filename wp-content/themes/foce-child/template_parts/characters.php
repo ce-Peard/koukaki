@@ -1,35 +1,28 @@
-<?php
-            <div class="other-characters">
-            <?php
-            while ($characters_query->have_posts()) {
-                $characters_query->the_post();
-                echo '<figure>';
-                echo get_the_post_thumbnail(get_the_ID(), 'full');
-                echo '<figcaption>';
-                the_title();
-                echo '</figcaption>';
-                echo '</figure>';
-            }
-            ?>
+<article id="characters">
+    <div class="main-character">
+        <h3>
+            <span class="scroll-animation">
+                Les personnages
+            </span>
+        </h3>
+    </div><br>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="<?php echo get_stylesheet_directory_uri() . '../assets/images/Kawaneko.png'; ?> " alt="personnage Kawaneko">
+            </div>
+            <div class="swiper-slide">
+                <img src="<?php echo get_stylesheet_directory_uri() . '../assets/images/Orenjiiro.png'; ?> " alt="personnage Orenjiiro">
+            </div>
+            <div class="swiper-slide">
+                <img src="<?php echo get_stylesheet_directory_uri() . '../assets/images/Pinku.png'; ?> " alt="personnage Pinku">
+            </div>
+            <div class="swiper-slide">
+                <img src="<?php echo get_stylesheet_directory_uri() . '../assets/images/Tenshi.png'; ?> " alt="personnage Tenshi">
+            </div>
+            <div class="swiper-slide">
+                <img src="<?php echo get_stylesheet_directory_uri() . '../assets/images/Jaakuna.png'; ?> " alt="personnage Jaakuna">
+            </div>
         </div>
-
-//écrire une <div></div>
-
-// <body>
-//   <!-- Swiper -->
-//   <div class="swiper mySwiper">
-//     <div class="swiper-wrapper">
-//       <div class="swiper-slide">Slide 1</div>
-//       <div class="swiper-slide">Slide 2</div>
-//       <div class="swiper-slide">Slide 3</div>
-//       <div class="swiper-slide">Slide 4</div>
-//       <div class="swiper-slide">Slide 5</div>
-//       <div class="swiper-slide">Slide 6</div>
-//       <div class="swiper-slide">Slide 7</div>
-//       <div class="swiper-slide">Slide 8</div>
-//       <div class="swiper-slide">Slide 9</div>
-//     </div>
-//     <div class="swiper-button-next"></div>
-//     <div class="swiper-button-prev"></div>
-//     <div class="swiper-pagination"></div>
-//   </div>
+    </div>
+</article>

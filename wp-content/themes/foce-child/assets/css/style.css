@@ -169,6 +169,27 @@
   animation: rotateHibiscus_footer 10s linear infinite;
 }
 
+.story #characters {
+  flex-direction: column;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
 .story #place {
   background-image: url("http://localhost/koukaki/wp-content/uploads/2024/04/Studio_Koukaki-image_place.png");
   z-index: 10;
@@ -216,4 +237,4 @@
 
 .big_cloud {
   animation: moveLeftToRight_big 10s linear;
-}
+}/*# sourceMappingURL=style.css.map */

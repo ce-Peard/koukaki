@@ -32,20 +32,20 @@ window.addEventListener("load", function () {
 // });
 
 // Sélectionner les éléments à observer
-const targets = document.querySelectorAll('.scroll-animation');
+const targets = document.querySelectorAll(".scroll-animation");
 
 // Options pour l'Intersection Observer
 const options = {
   root: null,
-  rootMargin: '0px',
-  threshold: 0.5 // 0.5 signifie que l'élément sera visible lorsque la moitié de celui-ci est dans la vue
+  rootMargin: "0px",
+  threshold: 0.5, // 0.5 signifie que l'élément sera visible lorsque la moitié de celui-ci est dans la vue
 };
 
 // Fonction de callback pour l'Intersection Observer
 const callback = (entries, observer) => {
-  entries.forEach(entry => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+      entry.target.classList.add("visible");
       observer.unobserve(entry.target);
     }
   });
@@ -55,10 +55,9 @@ const callback = (entries, observer) => {
 const observer = new IntersectionObserver(callback, options);
 
 // Observer chaque élément cible
-targets.forEach(target => {
+targets.forEach((target) => {
   observer.observe(target);
 });
-
 
 // SCROLL NUAGES
 
@@ -85,4 +84,23 @@ function animateClouds() {
 
 // Écouter l'événement de défilement de la page et appeler la fonction d'animation
 window.addEventListener("scroll", animateClouds);
-console.log("j'ai scrollé");
+
+// Initialize Swiper
+
+
+var swiper = new Swiper(".mySwiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});

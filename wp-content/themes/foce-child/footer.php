@@ -19,11 +19,13 @@
         <li><a href="#">Contact</a></li>
     </ul>
 </footer><!-- #colophon -->
-</div><!-- #page -->
+<!-- </div>#page -->
 
 <?php wp_footer(); ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-</body>
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script> -->
+<script src="./wp-content/themes/foce-child/swiper-bundle.min.js"></script>
+<script src="http://localhost/koukaki/wp-content/themes/foce-child/assets/JavaScript/script.js"></script>
 
+</body>
 </html>
