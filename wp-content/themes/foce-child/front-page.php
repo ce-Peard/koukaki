@@ -12,22 +12,22 @@ get_header();
     </section>
     <section class="story hidden">
         <h2>
-            <span class="scroll-animation">
+            <div class="animationTitle animatedElement">
                 L'histoire
-            </span>
+            </div>
         </h2>
         <article id="" class="story__article">
             <p><?php echo get_theme_mod('story'); ?></p>
         </article>
-        <?php 
-            get_template_part ('template_parts/characters');
+        <?php
+        get_template_part('template_parts/characters');
         ?>
         <article id="place">
             <div>
                 <h3>
-                    <span class="scroll-animation">
+                    <div class="animationTitle animatedElement">
                         Le Lieu
-                    </span>
+                    </div>
                 </h3>
                 <p><?php echo get_theme_mod('place'); ?></p>
                 <img src="http://localhost/koukaki/wp-content/uploads/2024/04/little_cloud.png" alt="Little Cloud" class="little_cloud">
@@ -40,9 +40,9 @@ get_header();
 
     <section id="studio" class="hidden">
         <h2>
-            <span class="scroll-animation">
+            <div class="animationTitle animatedElement">
                 Studio Koukaki
-            </span>
+            </div>
         </h2>
         <div>
             <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>

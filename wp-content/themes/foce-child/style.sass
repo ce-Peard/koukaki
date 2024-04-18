@@ -64,30 +64,69 @@
 
 // ANIMATION TITRES
 
-.scroll-animation
-  opacity: 0
-  transform: translateY(100px)
-  transition: 10s
-  transition-delay: 0,5s
-  animation: animatedTitle 1s forwards
-  &.visible
-    opacity: 1
-    transform: translateY(0)
+// .scroll-animation
+//   opacity: 0
+//   transform: translateY(100px)
+//   transition: 10s
+//   transition-delay: 0,5s
+//   animation: animatedTitle 1s 1s forwards
+//   &.visible
+//     opacity: 1
+//     transform: translateY(0)
 
-@keyframes animatedTitle
+// @keyframes animatedTitle
+//   0%
+//     transform: translate3d(-50%, 50%, 0)
+//     opacity: 0
+//   100%
+//     transform: translate3d(-50%, -50%, 0)
+//     opacity: 1
+
+// .animationTitle
+//   animation: animTitle 1s 1s forwards
+
+// @keyframes animTitle
+//   0%
+//     transform: translate3d(-50%, 50%, 0)
+//     opacity: 0
+
+//   100%
+//     transform: translate3d(-50%, -50%, 0)
+//     opacity: 1
+
+// .animationTitle
+//   animation: move-up_title 2s 300ms both, float 6s 2s infinite ease-in-out
+
+// @keyframes move-up_title
+//   0%
+//     transform: translateY(600px)
+//     opacity: 0
+
+// .animationTitle
+//   animation: move-up_title 2s 300ms both
+
+// @keyframes move-up_title
+//   from
+//     transform: translateY(100%)
+
+//   to
+//     transform: translateY(0)
+
+@keyframes move-up
   0%
-    transform: translate3d(-50%, 50%, 0)
+    transform: translateY(600px)
     opacity: 0
+
   100%
-    transform: translate3d(-50%, -50%, 0)
-    opacity: 1
+    transform: translateY(0)
+    // opacity: 1
 
-  //   animation: move-up_title 2s 300ms both, float 6s 2s infinite ease-in-out
+.animationTitle
+  // animation: move-up 2s 300ms both
+  // opacity: 0
 
-  // @keyframes move-up_title
-  //   0%
-  //     transform: translateY(600px)
-  //     opacity: 0
+// .animationTitle
+//   opacity: 0
 
   // ROTATION FLEURS
 
@@ -170,10 +209,34 @@
 .story #characters
   flex-direction: column
 
-.swiper
+// .swiper
+//   width: 100%
+//   padding-top: 50px
+//   padding-bottom: 50px
+
+// .swiper-slide
+//   background-position: center
+//   background-size: cover
+//   width: 300px
+//   height: 300px
+
+//   img
+//     display: block
+//     width: 100%
+
+.story #characters
+  position: relative
+  margin-bottom: 0 !important
+  z-index: 20
+
+.story #characters div
+  flex: none
+
+.swiper-container
   width: 100%
-  padding-top: 50px
-  padding-bottom: 50px
+  opacity: 1
+  margin-bottom: 7em
+  overflow: hidden
 
 .swiper-slide
   background-position: center
@@ -181,9 +244,16 @@
   width: 300px
   height: 300px
 
-  img
-    display: block
-    width: 100%
+  text-align: center
+  font-size: 18px
+  display: flex
+  justify-content: center
+  align-items: center
+
+.swiper-slide figure
+  display: block
+  width: 100%
+  object-fit: cover
 
 //ANIMATION NUAGES
 

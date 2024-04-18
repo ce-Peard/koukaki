@@ -17,90 +17,73 @@ window.addEventListener("load", function () {
 
 // ANIMATION TITRES
 
-// const h2Elements = document.querySelectorAll('h2');
+// Ajoutez la fonction handleScroll à l'écouteur d'événement "scroll"
+// function handleScroll() {
+//   var elements = document.querySelectorAll(".animatedElement");
 
-// const observer = new IntersectionObserver(entries => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             entry.target.classList.add('show');
-//         }
-//     });
-// });
+//   // Pour chaque élément avec la classe .animatedElement
+//   elements.forEach(function (element) {
+//     var position = element.getBoundingClientRect();
 
-// h2Elements.forEach(h2 => {
-//     observer.observe(h2);
-// });
+//     // Si l'élément est partiellement visible dans la fenêtre
+//     if (
+//       position.top < window.innerHeight &&
+//       position.bottom >= 0 &&
+//       position.left < window.innerWidth &&
+//       position.right >= 0 &&
+//       !element.classList.contains("animate") // Vérifie que l'élément n'a pas encore été animé
+//     ) {
+//       element.classList.add("animate");
+//     }
+//   });
+// }
 
-// Sélectionner les éléments à observer
-const targets = document.querySelectorAll(".scroll-animation");
-
-// Options pour l'Intersection Observer
-const options = {
-  root: null,
-  rootMargin: "0px",
-  threshold: 0.5, // 0.5 signifie que l'élément sera visible lorsque la moitié de celui-ci est dans la vue
-};
-
-// Fonction de callback pour l'Intersection Observer
-const callback = (entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
-    }
-  });
-};
-
-// Créer l'instance de l'Intersection Observer
-const observer = new IntersectionObserver(callback, options);
-
-// Observer chaque élément cible
-targets.forEach((target) => {
-  observer.observe(target);
-});
+// window.addEventListener("scroll", handleScroll);
 
 // SCROLL NUAGES
 
-// Récupérer les éléments des nuages
-const bigCloud = document.querySelector(".big_cloud");
-const littleCloud = document.querySelector(".little_cloud");
+function handleScroll() {
+  var elements = document.querySelectorAll(".animatedElement");
 
-// Fonction pour animer les nuages en fonction du défilement
-function animateClouds() {
-  const scrollPosition = window.scrollY;
+  elements.forEach(function (element) {
+    var position = element.getBoundingClientRect();
 
-  // Ajouter une classe pour déclencher l'animation lorsque la section est visible
-  const sectionOffset = bigCloud.offsetTop; // Utilisez l'élément bigCloud ou littleCloud selon votre choix
-  const windowHeight = window.innerHeight;
-
-  if (scrollPosition + windowHeight > sectionOffset) {
-    bigCloud.classList.add("animate");
-    littleCloud.classList.add("animate");
-  } else {
-    bigCloud.classList.remove("animate");
-    littleCloud.classList.remove("animate");
-  }
+    // Vérifie si l'élément est dans la fenêtre en fonction de la position de défilement
+    if (
+      position.top < window.innerHeight &&
+      position.bottom >= 0 &&
+      position.left < window.innerWidth &&
+      position.right >= 0 &&
+      !element.classList.contains("animate")
+    ) {
+      element.classList.add("animate");
+    }
+  });
 }
 
-// Écouter l'événement de défilement de la page et appeler la fonction d'animation
-window.addEventListener("scroll", animateClouds);
+//Utilisez un événement de défilement passif pour améliorer les performances
+window.addEventListener("scroll", handleScroll, { passive: true });
 
 // Initialize Swiper
 
-
-var swiper = new Swiper(".mySwiper", {
+// Initialize Swiper
+var swiper = new Swiper(".swiper-container", {
+  spaceBetween: 60,
+  speed: 1000,
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
-  slidesPerView: "auto",
+  loop: true,
+  slidesPerView: 3,
   coverflowEffect: {
-    rotate: 50,
+    rotate: 60,
     stretch: 0,
     depth: 100,
     modifier: 1,
-    slideShadows: true,
+    slideShadows: false,
   },
-  pagination: {
-    el: ".swiper-pagination",
-  },
+  // autoplay: {
+  //   delay: 2500,
+  // disableOnInteraction: false,
+  // },
 });

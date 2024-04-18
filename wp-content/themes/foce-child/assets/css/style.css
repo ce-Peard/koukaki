@@ -63,26 +63,13 @@
   display: none;
 }
 
-.scroll-animation {
-  opacity: 0;
-  transform: translateY(100px);
-  transition: 10s;
-  transition-delay: 0, 5s;
-  animation: animatedTitle 1s forwards;
-}
-.scroll-animation.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes animatedTitle {
+@keyframes move-up {
   0% {
-    transform: translate3d(-50%, 50%, 0);
+    transform: translateY(600px);
     opacity: 0;
   }
   100% {
-    transform: translate3d(-50%, -50%, 0);
-    opacity: 1;
+    transform: translateY(0);
   }
 }
 @keyframes rotateSunflower2 {
@@ -173,10 +160,21 @@
   flex-direction: column;
 }
 
-.swiper {
+.story #characters {
+  position: relative;
+  margin-bottom: 0 !important;
+  z-index: 20;
+}
+
+.story #characters div {
+  flex: none;
+}
+
+.swiper-container {
   width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  opacity: 1;
+  margin-bottom: 7em;
+  overflow: hidden;
 }
 
 .swiper-slide {
@@ -184,10 +182,18 @@
   background-size: cover;
   width: 300px;
   height: 300px;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.swiper-slide img {
+
+.swiper-slide figure {
   display: block;
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .story #place {
@@ -237,4 +243,4 @@
 
 .big_cloud {
   animation: moveLeftToRight_big 10s linear;
-}/*# sourceMappingURL=style.css.map */
+}

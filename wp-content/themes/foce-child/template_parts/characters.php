@@ -1,28 +1,34 @@
+<?php
+$args = array(
+    'post_type' => 'characters',
+    'posts_per_page' => -1,
+    'meta_key'  => '_main_char_field',
+    'orderby'   => 'meta_value_num',
+);
+$characters_query = new WP_Query($args);
+?>
+
 <article id="characters">
-    <div class="main-character">
-        <h3>
-            <span class="scroll-animation">
-                Les personnages
-            </span>
-        </h3>
-    </div><br>
-    <div class="swiper mySwiper">
+    <h3>
+        <div class="characters__title hidden">Les personnages</div>
+    </h3>
+    <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="<?php echo get_stylesheet_directory_uri() . '../assets/images/Kawaneko.png'; ?> " alt="personnage Kawaneko">
-            </div>
-            <div class="swiper-slide">
-                <img src="<?php echo get_stylesheet_directory_uri() . '../assets/images/Orenjiiro.png'; ?> " alt="personnage Orenjiiro">
-            </div>
-            <div class="swiper-slide">
-                <img src="<?php echo get_stylesheet_directory_uri() . '../assets/images/Pinku.png'; ?> " alt="personnage Pinku">
-            </div>
-            <div class="swiper-slide">
-                <img src="<?php echo get_stylesheet_directory_uri() . '../assets/images/Tenshi.png'; ?> " alt="personnage Tenshi">
-            </div>
-            <div class="swiper-slide">
-                <img src="<?php echo get_stylesheet_directory_uri() . '../assets/images/Jaakuna.png'; ?> " alt="personnage Jaakuna">
-            </div>
+            <?php
+            while ($characters_query->have_posts()) {
+                $characters_query->the_post(); ?>
+                <div class="swiper-slide">
+                    <figure>
+                        <?php echo get_the_post_thumbnail(get_the_ID(), 'full'); ?>
+                        <figcaption>
+                            <?php echo the_title(); ?>
+                        </figcaption>
+                    </figure>
+                </div>
+            <?php };
+            ?>
         </div>
     </div>
 </article>
