@@ -1,3 +1,5 @@
+@charset "UTF-8";
+/* ANIMATION VIDEO */
 .banner {
   display: flex;
   position: relative;
@@ -59,10 +61,12 @@
   }
 }
 
+/* FADE IN SECTIONS */
 .hidden {
   display: none;
 }
 
+/* ANIMATION TITRES */
 @keyframes move-up {
   0% {
     transform: translateY(600px);
@@ -128,11 +132,12 @@
     transform: rotate(360deg);
   }
 }
-.site-footer::before {
+/* Utilisation des animations */
+.oscars::before {
   animation: rotateSunflower2 10s linear infinite;
 }
 
-.site-footer::after {
+.oscars::after {
   animation: rotateOrchid 10s linear infinite;
 }
 
@@ -156,6 +161,7 @@
   animation: rotateHibiscus_footer 10s linear infinite;
 }
 
+/* SLIDER */
 /* Section personnages */
 #characters {
   margin: 6em;
@@ -215,6 +221,7 @@ div.other-characters {
      object-fit: cover;
 }
 
+/* ANIMATION NUAGES */
 .story #place {
   background-image: url("http://localhost/koukaki/wp-content/uploads/2024/04/Studio_Koukaki-image_place.png");
   z-index: 10;
@@ -263,3 +270,62 @@ div.other-characters {
 .big_cloud {
   animation: moveLeftToRight_big 10s linear;
 }
+
+/* NOMINATION OSCARS */
+.oscars {
+  position: relative;
+  padding-top: 90px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.oscars__image {
+  margin-top: -82px;
+}
+
+.oscars__title {
+  position: relative;
+}
+
+.oscars__title img {
+  height: 100%;
+}
+
+.oscars__title h3 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 3.2rem;
+  text-align: left;
+  font-size: 2.75rem;
+}
+
+.oscars img {
+  height: 100%;
+}
+
+/* déplacement fleur animées */
+.oscars::before {
+  content: url("../images/Sunflower.png");
+  position: absolute;
+  left: 4em;
+  top: 0em;
+}
+
+.oscars::after {
+  content: url("../images/orchid.png");
+  position: absolute;
+  right: -4em;
+  top: -3em;
+}
+
+.site-footer::before {
+  display: none;
+}
+
+.site-footer::after {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
