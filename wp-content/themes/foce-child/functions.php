@@ -4,6 +4,12 @@ function theme_enqueue_styles()
 {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/assets/css/style.css');
+    wp_enqueue_style( 'swiper-style', get_stylesheet_directory_uri() . '/assets/swiper/swiper-bundle.min.css');
+    wp_enqueue_style( 'swiper-autoplay', 'https://unpkg.com/swiper/css/autoplay.min.css');
+
+    wp_enqueue_script('child-script', get_stylesheet_directory_uri() . '/assets/js/script.js', array( 'jquery' ));
+    wp_enqueue_script( 'swiper-script', get_stylesheet_directory_uri() . '/assets/swiper/swiper-bundle.min.js');
+    wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js');
 }
 
 // Get customizer options form parent theme

@@ -156,8 +156,27 @@
   animation: rotateHibiscus_footer 10s linear infinite;
 }
 
-.story #characters {
+/* Section personnages */
+#characters {
+  margin: 6em;
+  display: flex;
+  text-align: center;
+}
+
+#characters h3 {
+  background-image: url("./assets/images/orange_characters_bg.png");
+}
+
+article#characters {
+  margin: 6em;
+  display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  width: 85%;
+}
+
+div.other-characters {
+  display: none !important;
 }
 
 .story #characters {

@@ -5,7 +5,7 @@ get_header();
 
 <main id="primary" class="site-main">
     <section class="banner hidden">
-        <video class="banner_video" width="1440" autoplay muted loop>
+        <video class="banner_video" autoplay muted loop>
             <source src="<?php echo get_stylesheet_directory_uri() . '/assets/video/animation_homepage.mp4'; ?>" type="video/mp4" />
         </video>
         <img class="banner_logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
@@ -16,13 +16,13 @@ get_header();
                 L'histoire
             </div>
         </h2>
-        <article id="" class="story__article">
+        <article id="" class="story__article hidden">
             <p><?php echo get_theme_mod('story'); ?></p>
         </article>
         <?php
         get_template_part('template_parts/characters');
         ?>
-        <article id="place">
+        <article id="place" class="hidden">
             <div>
                 <h3>
                     <div class="animationTitle animatedElement">
@@ -30,8 +30,8 @@ get_header();
                     </div>
                 </h3>
                 <p><?php echo get_theme_mod('place'); ?></p>
-                <img src="http://localhost/koukaki/wp-content/uploads/2024/04/little_cloud.png" alt="Little Cloud" class="little_cloud">
-                <img src="http://localhost/koukaki/wp-content/uploads/2024/04/big_cloud.png" alt="Big Cloud" class="big_cloud">
+                <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/little_cloud.png'; ?> " alt="Little Cloud" class="little_cloud">
+                <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/big_cloud.png'; ?>" alt="Big Cloud" class="big_cloud">
             </div>
 
         </article>

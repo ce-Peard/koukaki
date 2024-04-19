@@ -8,9 +8,9 @@ $args = array(
 $characters_query = new WP_Query($args);
 ?>
 
-<article id="characters">
+<article id="characters" class="hidden">
     <h3>
-        <div class="characters__title hidden">Les personnages</div>
+        <div class="characters__title">Les personnages</div>
     </h3>
     <!-- Slider main container -->
     <div class="swiper-container">
