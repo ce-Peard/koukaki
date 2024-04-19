@@ -28,6 +28,15 @@
 
         <header id="masthead" class="site-header">
             <nav id="site-navigation" class="main-navigation">
+                <div class="site-title" id="site-title-homepage">
+                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
+                </div>
+
+            </nav>
+
+            
+
+            <!-- <nav id="site-navigation" class="main-navigation">
                 <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
                     <span class="line"></span>
                     <span class="line"></span>
@@ -41,5 +50,5 @@
                     <li><a href="#studio">Studio Koukaki</a></li>
                 </ul>
 
-            </nav><!-- #site-navigation -->
+            </nav>#site-navigation -->
         </header><!-- #masthead -->
