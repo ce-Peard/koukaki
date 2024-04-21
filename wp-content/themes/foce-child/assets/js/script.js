@@ -1,6 +1,29 @@
 
 jQuery(document).ready(function($) {
 
+
+  /*MENU BURGER*/
+// JavaScript code to toggle the burger menu to cross menu on user click
+
+  const menuBurger = document.querySelector('.menu-burger');
+  const trait1 = document.querySelector('.trait1');
+  const trait2 = document.querySelector('.trait2');
+  const trait3 = document.querySelector('.trait3');
+
+  menuBurger.addEventListener('click', function() {
+    menuBurger.classList.toggle('crossed');
+    if (menuBurger.classList.contains('crossed')) {
+      trait1.style.transform = 'rotate(45deg) translate(5px, 5px)';
+      trait2.style.opacity = '0';
+      trait3.style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    } else {
+      trait1.style.transform = 'none';
+      trait2.style.opacity = '1';
+      trait3.style.transform = 'none';
+    }
+  });
+
+
   // Initialize Swiper
   var swiper = new Swiper(".swiper-container", {
     effect: "coverflow",
