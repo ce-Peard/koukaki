@@ -31,10 +31,15 @@
                 <div class="site-title" id="site-title-homepage">
                     <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
                 </div>
-                <div class="menu-burger" id="menu-burger">
-                    <div class="trait1"></div>
-                    <div class="trait2"></div>
-                    <div class="trait3"></div>
+                <div class="menu-burger">
+                    <div class="icone_menu-burger" id="icone_menu-burger">
+                        <div class="trait1"></div>
+                        <div class="trait2"></div>
+                        <div class="trait3"></div>
+                    </div>
                 </div>
             </nav>
+            <?php
+            get_template_part('template_parts/menu-ouvert');
+            ?>
         </header><!-- #masthead -->

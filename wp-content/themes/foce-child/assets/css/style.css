@@ -15,6 +15,7 @@
   justify-content: center;
 }
 
+/* Icone menu burger */
 .menu-burger {
   width: 40px;
   height: 30px;
@@ -29,13 +30,59 @@
   margin: 6px 0;
 }
 .menu-burger.crossed .trait1 {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(7px, 5px);
 }
 .menu-burger.crossed .trait2 {
   opacity: 0;
 }
 .menu-burger.crossed .trait3 {
   transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* menu burger ouvert*/
+.menu_ouvert {
+  background-color: #FFF5E9;
+  width: 100%;
+  height: 100vh;
+  font-family: "Roboto Mono", monospace;
+  font-size: 4rem;
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.menu_ouvert li > a {
+  font-size: 3.1rem;
+}
+.menu_ouvert ul {
+  margin: 0;
+  padding-inline-start: 0;
+}
+
+.menu_ouvert_logo {
+  width: 154.12px;
+}
+
+.menu_ouvert_contenu {
+  max-height: 91vh;
+  overflow-y: auto;
+  list-style-type: none;
+}
+.menu_ouvert_contenu li {
+  font-size: 64px;
+}
+.menu_ouvert_contenu a {
+  text-decoration: none;
+}
+
+.menu_ouvert_footer {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+  font-weight: 400;
+  position: absolute;
+  bottom: 100px;
 }
 
 /* ANIMATION VIDEO */
