@@ -39,7 +39,9 @@
                     </div>
                 </div>
             </nav>
-            <?php
-            get_template_part('template_parts/menu-ouvert');
-            ?>
+            <div class="menu_ouvert">
+                <?php
+                get_template_part('template_parts/menu-ouvert');
+                ?>
+            </div>
         </header><!-- #masthead -->

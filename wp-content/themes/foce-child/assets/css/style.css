@@ -46,12 +46,12 @@
   height: 100vh;
   font-family: "Roboto Mono", monospace;
   font-size: 4rem;
-  display: flex;
+  overflow: hidden;
+  display: none;
   justify-content: flex-start;
   text-align: center;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
 }
 .menu_ouvert li > a {
   font-size: 3.1rem;

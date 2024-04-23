@@ -1,4 +1,4 @@
-<div class="menu_ouvert">
+<div>
     <img class="menu_ouvert_logo" src="<?php echo get_theme_file_uri() . '/assets/images/image_logo_en_paralax.png'; ?>" alt="">
     <ul class="menu_ouvert_contenu">
         <li class="modal__content--story flower cat"><a href="#story">Histoire</a></li>
