@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
 
 
   /*MENU BURGER*/
-// JavaScript code to toggle the burger menu to cross menu on user click
+// Icone menu burger
 
   const icone_menuBurger = document.querySelector('.icone_menu-burger');
   const trait1 = document.querySelector('.trait1');
@@ -24,6 +24,15 @@ jQuery(document).ready(function($) {
   });
 
   // ouverture-fermeture menu-burger
+
+  document.querySelector('.menu-burger').addEventListener('click', function() {
+    const menuOuvert = document.querySelector('.menu_ouvert');
+    if (menuOuvert.style.display === 'flex') {
+      menuOuvert.style.display = 'none';
+    } else {
+      menuOuvert.style.display = 'flex';
+    }
+  });
   
 
 
