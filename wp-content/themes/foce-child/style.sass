@@ -59,6 +59,7 @@
   ul
     margin: 0
     padding-inline-start: 0
+    overflow-y: visible
   
 .menu_ouvert_logo
   width: 154.12px
@@ -78,26 +79,64 @@
   font-family: 'Roboto Mono', monospace
   font-size: 1rem
   font-weight: 400
-
   position: absolute
   bottom: 100px
 
 /* animations menu ouvert*/
-.menu_ouvert_histoire
+.menu_ouvert_histoire, .menu_ouvert_personnages, .menu_ouvert_lieu, .menu_ouvert_studio
   position: relative
   
-.menu_ouvert_histoire::before
-  content: url("../images/cat1.png")
-  position: absolute
-  right: 66%
-  bottom: -18.5%
-  animation: float 7s 100ms infinite ease-in-out
+.menu_ouvert_histoire
+  &::before
+    content: url("../images/cat1.png")
+    position: absolute
+    right: 66%
+    bottom: -18.5%
+    animation: float 7s 100ms infinite ease-in-out
+    // transform: scale(0.3)
+  &::after
+    content: url("../images/Sunflower.png")
+    position: absolute
+    left: 65%
+    bottom: -32%
 
-.menu_ouvert_histoire::after
-  content: url("../images/Sunflower.png")
-  position: absolute
-  left: 65%
-  bottom: -32%
+.menu_ouvert_personnages
+  &::before
+    content: url("../images/orchid.png")
+    position: absolute
+    right: 92%
+    bottom: 123.5%
+  &::after
+    content: url(../images/random_flower.png)
+    position: absolute
+    left: 93%
+    bottom: -116%
+
+.menu_ouvert_lieu
+  &::before
+    content: url("../images/flower.png")
+    position: absolute
+    right: 75%
+    bottom: -17%
+  &::after
+    content: url(../images/cat2.png)
+    position: absolute
+    left: 65%
+    bottom: -75%
+    animation: float 9s 120ms infinite ease-in-out
+
+.menu_ouvert_studio
+  &::before
+    content: url("../images/cat3.png")
+    position: absolute
+    right: 85%
+    bottom: -147%
+    animation: float 5s 30ms infinite ease-in-out
+  &::after
+    content: url(../images/hibiscus_footer.png)
+    position: absolute
+    left: 75%
+    bottom: -892%
 
 // .modal__content--place::before {
 //   content: url("../images/Jaakuna-1.png");
@@ -307,7 +346,7 @@
 .oscars::before
   animation: rotateSunflower2 10s linear infinite
 
-.oscars::after
+.oscars::after, .menu_ouvert_personnages::before
   animation: rotateOrchid 10s linear infinite
 
 .story h2::after, .menu_ouvert_histoire::after
@@ -316,13 +355,13 @@
 .story__article::after
   animation: rotateHibiscus 10s linear infinite
 
-#studio h2::before
+#studio h2::before, .menu_ouvert_personnages::after
   animation: rotateRandom_flower 10s linear infinite
 
-#studio h2::after
+#studio h2::after, .menu_ouvert_lieu::before
   animation: rotateFlower 10s linear infinite
 
-.site-footer ul::after
+.site-footer ul::after, .menu_ouvert_studio::after
   animation: rotateHibiscus_footer 10s linear infinite
 
 /* SLIDER */
