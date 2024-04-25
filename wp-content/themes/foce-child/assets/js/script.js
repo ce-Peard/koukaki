@@ -94,30 +94,9 @@ jQuery(document).ready(function($) {
     });
   });
 
-  // ANIMATION TITRES
+  // ANIMATION TITRES au scroll
 
-  // Ajoutez la fonction handleScroll à l'écouteur d'événement "scroll"
-  function handleScroll() {
-    var elements = document.querySelectorAll(".animatedElement");
 
-    // Pour chaque élément avec la classe .animatedElement
-    elements.forEach(function (element) {
-      var position = element.getBoundingClientRect();
-
-      // Si l'élément est partiellement visible dans la fenêtre
-      if (
-        position.top < window.innerHeight &&
-        position.bottom >= 0 &&
-        position.left < window.innerWidth &&
-        position.right >= 0 &&
-        !element.classList.contains("animate") // Vérifie que l'élément n'a pas encore été animé
-      ) {
-        element.classList.add("animate");
-      }
-    });
-  }
-
-  window.addEventListener("scroll", handleScroll);
 
   // SCROLL NUAGES
 

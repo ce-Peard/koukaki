@@ -10,6 +10,8 @@ get_header();
         </video>
         <img class="banner_logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
     </section>
+
+    <span id="histoire"></span>
     <section class="story hidden">
         <h2>
             <div class="animationTitle animatedElement effet_move-up">
@@ -19,13 +21,15 @@ get_header();
         <article id="" class="story__article hidden">
             <p><?php echo get_theme_mod('story'); ?></p>
         </article>
+        <span id="personnages"></span>
         <?php
         get_template_part('template_parts/characters');
         ?>
+        <span id="lieu"></span>
         <article id="place" class="hidden">
             <div>
                 <h3>
-                    <div class="animationTitle animatedElement effet_move-up">
+                    <div class="animationTitle animatedElement ">
                         Le Lieu
                     </div>
                 </h3>
@@ -36,11 +40,10 @@ get_header();
 
         </article>
     </section>
-
-
+    <span id="studio"></span>
     <section id="studio" class="hidden">
         <h2>
-            <div class="animationTitle animatedElement effet_move-up">
+            <div class="animationTitle animatedElement ">
                 Studio Koukaki
             </div>
         </h2>
@@ -50,7 +53,7 @@ get_header();
         </div>
     </section>
     <section id="oscars" class="oscars">
-            <div class="oscars__title effet_move-up">
+            <div class="oscars__title ">
             <img src="<?php echo get_theme_file_uri() . '/assets/images/fond_orange_oscars.png'; ?>" alt="fond du titre des nominations">
             <h3>Fleurs d’oranger & chats errants est nominé aux Oscars Short Film Animated de 2022 !</h3>
             </div>
