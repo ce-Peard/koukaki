@@ -25,16 +25,29 @@ jQuery(document).ready(function($) {
 
   // ouverture-fermeture menu-burger
 
+  // document.querySelector('.menu-burger').addEventListener('click', function() {
+  //   const menuOuvert = document.querySelector('.menu_ouvert');
+  //   if (menuOuvert.style.display === 'flex') {
+  //     menuOuvert.style.display = 'none';
+  //   } else {
+  //     menuOuvert.style.display = 'flex';
+  //   }
+  // });
   document.querySelector('.menu-burger').addEventListener('click', function() {
     const menuOuvert = document.querySelector('.menu_ouvert');
     if (menuOuvert.style.display === 'flex') {
-      menuOuvert.style.display = 'none';
+      menuOuvert.style.opacity = '0'; // Réinitialiser l'opacité à 0
+      setTimeout(() => {
+        menuOuvert.style.display = 'none'; // Masquer le menu_ouvert après le fade-out
+      }, 300); // Délai pour la transition de fade-out
     } else {
-      menuOuvert.style.display = 'flex';
+      menuOuvert.style.display = 'flex'; // Afficher le menu_ouvert
+      setTimeout(() => {
+        menuOuvert.style.opacity = '1'; // Ajouter l'opacité à 1 pour le fade-in
+      }, 10); // Délai pour déclencher la transition
     }
   });
   
-
 
   // Initialize Swiper
   var swiper = new Swiper(".swiper-container", {
@@ -72,7 +85,7 @@ jQuery(document).ready(function($) {
       section.classList.remove("hidden");
       section.style.opacity = 0;
       var fadeInEffect = setInterval(function () {
-        if (section.style.opacity < 1) {
+        if (parseFloat(section.style.opacity) < 1) {
           section.style.opacity = parseFloat(section.style.opacity) + 0.1;
         } else {
           clearInterval(fadeInEffect);

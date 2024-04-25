@@ -49,6 +49,8 @@
   font-size: 4rem;
   overflow: hidden;
   display: none;
+  opacity: 0;
+  transition: opacity 2s;
   justify-content: flex-start;
   text-align: center;
   flex-direction: column;
@@ -212,8 +214,17 @@
 }
 
 /* FADE IN SECTIONS */
-.hidden {
-  display: none;
+.effet_move-up {
+  animation: move-up 2s 300ms both;
+}
+@keyframes move-up {
+  0% {
+    transform: translateY(600px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* ANIMATION TITRES */

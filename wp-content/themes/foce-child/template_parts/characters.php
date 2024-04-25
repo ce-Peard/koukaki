@@ -10,7 +10,7 @@ $characters_query = new WP_Query($args);
 
 <article id="characters" class="hidden">
     <h3>
-        <div class="characters__title">Les personnages</div>
+        <div class="characters__title effet_move-up">Les personnages</div>
     </h3>
     <!-- Slider main container -->
     <div class="swiper-container">

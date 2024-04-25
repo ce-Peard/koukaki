@@ -48,6 +48,8 @@
   font-size: 4rem
   overflow: hidden
   display: none
+  opacity: 0 // Définir l'opacité à 0 par défaut
+  transition: opacity 2s
   justify-content: flex-start
   text-align: center
   flex-direction: column
@@ -138,25 +140,6 @@
     left: 75%
     bottom: -892%
 
-// .modal__content--place::before {
-//   content: url("../images/Jaakuna-1.png");
-//   position: absolute;
-//   left: 20em;
-//   top: -4em;  
-//   animation: float 6s 200ms infinite ease-in-out; 
-//   /* transform: scale(0.7); */
-// }
-
-// .modal__content--footer::before {
-//   content: url("../images/Orenjiiro-1.png");
-//   position: absolute;
-//   right: 30em;
-//   bottom: 0;  
-//   animation: float 5s 300ms infinite ease-in-out; 
-
-
-
-
   
 /* ANIMATION VIDEO */
 
@@ -173,6 +156,16 @@
     z-index: 1
     opacity: 1
     left: auto
+    // animation: move-down 2s 300ms both
+  
+  // @keyframes move-down
+  //   0%
+  //     transform: translateY(-300px)
+  //     opacity: 0
+  
+  //   100% 
+  //     transform: translateY(0)
+  //     visibility: visible
 
   .banner_logo
     position: sticky
@@ -218,9 +211,19 @@
       transform: translate3d(6px,6px,0)
 
 /* FADE IN SECTIONS */
+.effet_move-up
+  animation: move-up 2s 300ms both
 
-.hidden
-  display: none
+  @keyframes move-up
+    0%
+      transform: translateY(600px)
+      opacity: 0
+
+    100%
+      transform: translateY(0)
+
+// .hidden
+//   display: none
 
 /* ANIMATION TITRES */
 

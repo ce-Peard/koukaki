@@ -12,7 +12,7 @@ get_header();
     </section>
     <section class="story hidden">
         <h2>
-            <div class="animationTitle animatedElement">
+            <div class="animationTitle animatedElement effet_move-up">
                 L'histoire
             </div>
         </h2>
@@ -25,7 +25,7 @@ get_header();
         <article id="place" class="hidden">
             <div>
                 <h3>
-                    <div class="animationTitle animatedElement">
+                    <div class="animationTitle animatedElement effet_move-up">
                         Le Lieu
                     </div>
                 </h3>
@@ -40,7 +40,7 @@ get_header();
 
     <section id="studio" class="hidden">
         <h2>
-            <div class="animationTitle animatedElement">
+            <div class="animationTitle animatedElement effet_move-up">
                 Studio Koukaki
             </div>
         </h2>
@@ -50,7 +50,7 @@ get_header();
         </div>
     </section>
     <section id="oscars" class="oscars">
-            <div class="oscars__title">
+            <div class="oscars__title effet_move-up">
             <img src="<?php echo get_theme_file_uri() . '/assets/images/fond_orange_oscars.png'; ?>" alt="fond du titre des nominations">
             <h3>Fleurs d’oranger & chats errants est nominé aux Oscars Short Film Animated de 2022 !</h3>
             </div>
