@@ -1,4 +1,4 @@
-  
+
   /* TITRE DU SITE */
 
 #site-title-homepage
@@ -56,18 +56,14 @@
   flex-direction: column
   align-items: center
 
-  li > a
+  a
     font-size: 2.9rem
 
-  li > a:hover
-    filter: drop-shadow(0px 0px 5px #ff5c00) !important
-    font-size: 6rem
-  
   ul
     margin: 0
     padding-inline-start: 0
     overflow-y: visible
-  
+
 .menu_ouvert_logo
   width: 154.12px
 
@@ -81,6 +77,8 @@
     font-size: 64px
   a
     text-decoration: none
+  a:hover
+    filter: drop-shadow(0px 0px 5px #ff5c00) !important
 
 .menu_ouvert_footer
   font-family: 'Roboto Mono', monospace
@@ -88,11 +86,13 @@
   font-weight: 400
   position: absolute
   bottom: 100px
+  a
+    font-size: 15px
 
 /* animations menu ouvert*/
 .menu_ouvert_histoire, .menu_ouvert_personnages, .menu_ouvert_lieu, .menu_ouvert_studio
   position: relative
-  
+
 .menu_ouvert_histoire
   &::before
     content: url("../images/cat1.png")
@@ -145,9 +145,8 @@
     left: 75%
     bottom: -892%
 
-  /* effets hover sur les liens*//import css-variables from 
-  
-  
+  /* effets hover sur les liens*/
+
 /* ANIMATION VIDEO */
 
 .banner
@@ -164,12 +163,12 @@
     opacity: 1
     left: auto
     // animation: move-down 2s 300ms both
-  
+
   // @keyframes move-down
   //   0%
   //     transform: translateY(-300px)
   //     opacity: 0
-  
+
   //   100% 
   //     transform: translateY(0)
   //     visibility: visible
@@ -229,58 +228,10 @@
     100%
       transform: translateY(0)
 
-.hidden
-  display: none
+// .hidden
+//   display: none
 
 /* ANIMATION TITRES */
-
-// .scroll-animation
-//   opacity: 0
-//   transform: translateY(100px)
-//   transition: 10s
-//   transition-delay: 0,5s
-//   animation: animatedTitle 1s 1s forwards
-//   &.visible
-//     opacity: 1
-//     transform: translateY(0)
-
-// @keyframes animatedTitle
-//   0%
-//     transform: translate3d(-50%, 50%, 0)
-//     opacity: 0
-//   100%
-//     transform: translate3d(-50%, -50%, 0)
-//     opacity: 1
-
-// .animationTitle
-//   animation: animTitle 1s 1s forwards
-
-// @keyframes animTitle
-//   0%
-//     transform: translate3d(-50%, 50%, 0)
-//     opacity: 0
-
-//   100%
-//     transform: translate3d(-50%, -50%, 0)
-//     opacity: 1
-
-// .animationTitle
-//   animation: move-up_title 2s 300ms both, float 6s 2s infinite ease-in-out
-
-// @keyframes move-up_title
-//   0%
-//     transform: translateY(600px)
-//     opacity: 0
-
-// .animationTitle
-//   animation: move-up_title 2s 300ms both
-
-// @keyframes move-up_title
-//   from
-//     transform: translateY(100%)
-
-//   to
-//     transform: translateY(0)
 
 @keyframes move-up
   0%
@@ -434,17 +385,19 @@ div.other-characters
   display: flex
   position: relative
   object-fit: contain
+  .cloud
+    position: relative
   .big_cloud
-    position: absolute
+    position: relative
     z-index: 100
-    top: 60px
-    left: 1031px
+    bottom: 320px
+    left: 881px
     filter: blur(15px)
     opacity: 0.8
   .little_cloud
-    position: absolute
+    position: relative
     z-index: 100
-    top: 260px
+    bottom: 250px
     left: 793px
     filter: blur(10px)
     opacity: 0.8
@@ -456,6 +409,13 @@ div.other-characters
   to
     left: 793px
 
+@keyframes moveRightToLeft_little
+  from
+    left: 793px
+
+  to
+    left: 493px
+
 @keyframes moveLeftToRight_big
   from
     left: 793px
@@ -463,14 +423,55 @@ div.other-characters
   to
     left: 1031px
 
-.little_cloud
-  animation: moveLeftToRight_little 10s linear
+@keyframes cloudMove
+  from
+    transform: translateX(0%) //Début à la position finale de l'animation initiale
+  to
+    opacity: 1
+    transform: translateX(-400px) // Fin à la position initiale (aucun décalage)
 
-.big_cloud
-  animation: moveLeftToRight_big 10s linear
+@keyframes cloudMoveReverse
+  from
+    opacity: 1
+    transform: translateX(-400px) // Début à la position finale de l'animation initiale
+  to
+    opacity: 1
+    transform: translateX(0%) // Fin à la position initiale (aucun décalage) */
+
+.cloud-animation
+  position: absolute
+  animation: cloudMove 2s forwards // forwards pour maintenir la dernière valeur d'animation */
+
+.cloud-animation-reverse
+  animation: cloudMoveReverse 4s forwards
+
+/* Apparition du contenu au défilement */
+
+.appear-loaded .appear [class*="appear-"]
+  opacity: 0 !important
+  transform: translateY(100px) !important
+  transition: 10s !important
+
+.appear-loaded [class*="appear-"]
+  transition: 1s cubic-bezier(0.5, 0, 0, 1)
+
+@media (prefers-reduced-motion: reduce)
+  .appear [class*="appear-"]
+    opacity: 1 !important
+    transform: translateY(0px) !important
+
+    // [class*="appear-"] 
+    // transition-duration: 0s !important
+    // transition-delay: 0s !important
+
+// .little_cloud
+//   animation: moveLeftToRight_little 10s linear
+
+// .big_cloud
+//   animation: moveLeftToRight_big 10s linear
 
 /* NOMINATION OSCARS */
-  
+
 .oscars
   position: relative
   padding-top: 90px

@@ -4,7 +4,7 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-    <section class="banner hidden">
+    <section class="banner hidden appear">
         <video class="banner_video" autoplay muted loop>
             <source src="<?php echo get_stylesheet_directory_uri() . '/assets/video/animation_homepage.mp4'; ?>" type="video/mp4" />
         </video>
@@ -12,13 +12,13 @@ get_header();
     </section>
 
     <span id="histoire"></span>
-    <section class="story hidden">
+    <section class="story hidden appear">
         <h2>
             <div class="animationTitle animatedElement effet_move-up">
                 L'histoire
             </div>
         </h2>
-        <article id="" class="story__article hidden">
+        <article id="" class="story__article hidden appear">
             <p><?php echo get_theme_mod('story'); ?></p>
         </article>
         <span id="personnages"></span>
@@ -26,7 +26,7 @@ get_header();
         get_template_part('template_parts/characters');
         ?>
         <span id="lieu"></span>
-        <article id="place" class="hidden">
+        <article id="place" class="hidden appear">
             <div>
                 <h3>
                     <div class="animationTitle animatedElement ">
@@ -34,8 +34,10 @@ get_header();
                     </div>
                 </h3>
                 <p><?php echo get_theme_mod('place'); ?></p>
-                <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/little_cloud.png'; ?> " alt="Little Cloud" class="little_cloud">
-                <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/big_cloud.png'; ?>" alt="Big Cloud" class="big_cloud">
+                <div class="cloud appear">
+                    <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/little_cloud.png'; ?> " alt="Little Cloud" class="little_cloud">
+                    <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/big_cloud.png'; ?>" alt="Big Cloud" class="big_cloud">
+                </div>
             </div>
 
         </article>
@@ -53,12 +55,12 @@ get_header();
         </div>
     </section>
     <section id="oscars" class="oscars">
-            <div class="oscars__title ">
+        <div class="oscars__title ">
             <img src="<?php echo get_theme_file_uri() . '/assets/images/fond_orange_oscars.png'; ?>" alt="fond du titre des nominations">
             <h3>Fleurs d’oranger & chats errants est nominé aux Oscars Short Film Animated de 2022 !</h3>
-            </div>
-            <div class="oscars__image">
-                <img src="<?php echo get_theme_file_uri() . '/assets/images/oscars.png'; ?>" alt="Nomination aux Oscars 2022" ">
+        </div>
+        <div class="oscars__image">
+            <img src="<?php echo get_theme_file_uri() . '/assets/images/oscars.png'; ?>" alt="Nomination aux Oscars 2022" ">
             </div>
         </section>
 </main><!-- #main -->
