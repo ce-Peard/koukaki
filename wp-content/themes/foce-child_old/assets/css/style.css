@@ -1,0 +1,588 @@
+@charset "UTF-8";
+/* TITRE DU SITE */
+#site-title-homepage {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* BURGER MENU */
+.main-navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icone menu burger */
+.menu-burger {
+  width: 40px;
+  height: 30px;
+  position: absolute;
+  right: 5em;
+  cursor: pointer;
+}
+.menu-burger .trait1, .menu-burger .trait2, .menu-burger .trait3 {
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  margin: 6px 0;
+}
+.menu-burger.crossed .trait1 {
+  transform: rotate(45deg) translate(7px, 5px);
+}
+.menu-burger.crossed .trait2 {
+  opacity: 0;
+}
+.menu-burger.crossed .trait3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* menu burger ouvert*/
+.menu_ouvert {
+  position: relative;
+  background-color: #FFF5E9;
+  width: 100%;
+  height: 100vh;
+  font-family: "Roboto Mono", monospace;
+  font-size: 4rem;
+  overflow: hidden;
+  display: none;
+  opacity: 0;
+  transition: opacity 2s;
+  justify-content: flex-start;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+}
+.menu_ouvert a {
+  font-size: 2.9rem;
+}
+.menu_ouvert ul {
+  margin: 0;
+  padding-inline-start: 0;
+  overflow-y: visible;
+}
+
+.menu_ouvert_logo {
+  width: 154.12px;
+}
+
+.menu_ouvert_contenu {
+  width: 100%;
+  max-height: 91vh;
+  overflow-y: auto;
+  list-style-type: none;
+  line-height: 1.3;
+}
+.menu_ouvert_contenu li {
+  font-size: 64px;
+}
+.menu_ouvert_contenu a {
+  text-decoration: none;
+}
+.menu_ouvert_contenu a:hover {
+  filter: drop-shadow(0px 0px 5px #ff5c00) !important;
+}
+
+.menu_ouvert_footer {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+  font-weight: 400;
+  position: absolute;
+  bottom: 100px;
+}
+.menu_ouvert_footer a {
+  font-size: 15px;
+}
+
+/* animations menu ouvert*/
+.menu_ouvert_histoire, .menu_ouvert_personnages, .menu_ouvert_lieu, .menu_ouvert_studio {
+  position: relative;
+}
+
+.menu_ouvert_histoire::before {
+  content: url("../images/cat1.png");
+  position: absolute;
+  right: 66%;
+  bottom: -18.5%;
+  animation: float 7s 100ms infinite ease-in-out;
+}
+.menu_ouvert_histoire::after {
+  content: url("../images/Sunflower.png");
+  position: absolute;
+  left: 65%;
+  bottom: -32%;
+}
+
+.menu_ouvert_personnages::before {
+  content: url("../images/orchid.png");
+  position: absolute;
+  right: 92%;
+  bottom: 123.5%;
+}
+.menu_ouvert_personnages::after {
+  content: url(../images/random_flower.png);
+  position: absolute;
+  left: 93%;
+  bottom: -116%;
+}
+
+.menu_ouvert_lieu::before {
+  content: url("../images/flower.png");
+  position: absolute;
+  right: 75%;
+  bottom: -17%;
+}
+.menu_ouvert_lieu::after {
+  content: url(../images/cat2.png);
+  position: absolute;
+  left: 65%;
+  bottom: -75%;
+  animation: float 9s 120ms infinite ease-in-out;
+}
+
+.menu_ouvert_studio {
+  /* effets hover sur les liens*/
+}
+.menu_ouvert_studio::before {
+  content: url("../images/cat3.png");
+  position: absolute;
+  right: 85%;
+  bottom: -147%;
+  animation: float 5s 30ms infinite ease-in-out;
+}
+.menu_ouvert_studio::after {
+  content: url(../images/hibiscus_footer.png);
+  position: absolute;
+  left: 75%;
+  bottom: -892%;
+}
+
+/* ANIMATION VIDEO */
+.banner {
+  display: flex;
+  position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 800px;
+}
+.banner .banner_video {
+  position: absolute;
+  bottom: 0px;
+  min-width: 1440px;
+  z-index: 1;
+  opacity: 1;
+  left: auto;
+}
+.banner .banner_logo {
+  position: sticky;
+  top: 80px;
+  z-index: 10;
+  opacity: 1;
+  animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;
+}
+@keyframes move-up {
+  0% {
+    transform: translateY(600px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes float {
+  0% {
+    transform: translate3d(6px, 6px, 0);
+  }
+  12% {
+    transform: translate3d(0px, 6px, 0);
+  }
+  24% {
+    transform: translate3d(6px, -4px, 0);
+  }
+  36% {
+    transform: translate3d(6px, 0px, 0);
+  }
+  48% {
+    transform: translate3d(-4px, -6px, 0);
+  }
+  60% {
+    transform: translate3d(0px, -4px, 0);
+  }
+  72% {
+    transform: translate3d(-8px, 6px, 0);
+  }
+  84% {
+    transform: translate3d(-4px, 0px, 0);
+  }
+  100% {
+    transform: translate3d(6px, 6px, 0);
+  }
+}
+
+/* FADE IN SECTIONS */
+.effet_move-up {
+  animation: move-up 2s 300ms both;
+}
+@keyframes move-up {
+  0% {
+    transform: translateY(600px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ANIMATION TITRES */
+@keyframes move-up {
+  0% {
+    transform: translateY(600px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes rotateSunflower2 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateOrchid {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateSunflower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateHibiscus {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateRandom_flower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateFlower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateHibiscus_footer {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Utilisation des animations */
+.oscars::before {
+  animation: rotateSunflower2 10s linear infinite;
+}
+
+.oscars::after, .menu_ouvert_personnages::before {
+  animation: rotateOrchid 10s linear infinite;
+}
+
+.story h2::after, .menu_ouvert_histoire::after {
+  animation: rotateSunflower 10s linear infinite;
+}
+
+.story__article::after {
+  animation: rotateHibiscus 10s linear infinite;
+}
+
+#studio h2::before, .menu_ouvert_personnages::after {
+  animation: rotateRandom_flower 10s linear infinite;
+}
+
+#studio h2::after, .menu_ouvert_lieu::before {
+  animation: rotateFlower 10s linear infinite;
+}
+
+.site-footer ul::after, .menu_ouvert_studio::after {
+  animation: rotateHibiscus_footer 10s linear infinite;
+}
+
+/* SLIDER */
+/* Section personnages */
+#characters {
+  margin: 6em;
+  display: flex;
+  text-align: center;
+}
+
+#characters h3 {
+  background-image: url("./assets/images/orange_characters_bg.png");
+}
+
+article#characters {
+  margin: 6em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 85%;
+}
+
+div.other-characters {
+  display: none !important;
+}
+
+.story #characters {
+  position: relative;
+  margin-bottom: 0 !important;
+  z-index: 20;
+}
+
+.story #characters div {
+  flex: none;
+}
+
+.swiper-container {
+  width: 100%;
+  opacity: 1;
+  margin-bottom: 7em;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide figure {
+  display: block;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* ANIMATION NUAGES */
+#place {
+  overflow-y: hidden;
+}
+
+.story #place {
+  background-image: url("http://localhost/koukaki/wp-content/uploads/2024/04/Studio_Koukaki-image_place.png");
+  z-index: 10;
+  display: flex;
+  position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.story #place .cloud {
+  position: relative;
+}
+.story #place .big_cloud {
+  position: relative;
+  z-index: 100;
+  bottom: 320px;
+  left: 881px;
+  filter: blur(15px);
+  opacity: 0.8;
+}
+.story #place .little_cloud {
+  position: relative;
+  z-index: 100;
+  bottom: 250px;
+  left: 793px;
+  filter: blur(10px);
+  opacity: 0.8;
+}
+
+@keyframes moveLeftToRight_little {
+  from {
+    left: 493px;
+  }
+  to {
+    left: 793px;
+  }
+}
+@keyframes moveRightToLeft_little {
+  from {
+    left: 793px;
+  }
+  to {
+    left: 493px;
+  }
+}
+@keyframes moveLeftToRight_big {
+  from {
+    left: 793px;
+  }
+  to {
+    left: 1031px;
+  }
+}
+@keyframes cloudMove {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-400px);
+  }
+}
+@keyframes cloudMoveReverse {
+  from {
+    opacity: 1;
+    transform: translateX(-400px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+.cloud-animation {
+  position: absolute;
+  animation: cloudMove 2s forwards;
+}
+
+.cloud-animation-reverse {
+  animation: cloudMoveReverse 4s forwards;
+}
+
+/* Apparition du contenu au défilement */
+.appear-loaded .appear [class*=appear-] {
+  opacity: 0 !important;
+  transform: translateY(100px) !important;
+  transition: 10s !important;
+}
+
+.appear-loaded [class*=appear-] {
+  transition: 1s cubic-bezier(0.5, 0, 0, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .appear [class*=appear-] {
+    opacity: 1 !important;
+    transform: translateY(0px) !important;
+  }
+}
+/* NOMINATION OSCARS */
+.oscars {
+  position: relative;
+  padding-top: 90px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+  justify-content: center;
+  align-items: center;
+  overflow-x: clip;
+}
+
+.oscars__image {
+  margin-top: -82px;
+}
+
+.oscars__title {
+  position: relative;
+}
+
+.oscars__title img {
+  height: 100%;
+}
+
+.oscars__title h3 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 3.2rem;
+  text-align: left;
+  font-size: 2.75rem;
+}
+
+.oscars img {
+  height: 100%;
+}
+
+/* déplacement fleur animées */
+.oscars::before {
+  content: url("../images/Sunflower.png");
+  position: absolute;
+  left: 4em;
+  top: 0em;
+}
+
+.oscars::after {
+  content: url("../images/orchid.png");
+  position: absolute;
+  right: -4em;
+  top: -3em;
+}
+
+.site-footer::before {
+  display: none;
+}
+
+.site-footer::after {
+  display: none;
+}
+
+@media (max-width: 320px) {
+  .menu-burger {
+    right: 1em;
+  }
+}
+@media (max-width: 540px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 440px) {
+  .menu-burger {
+    right: 2em;
+  }
+}
+@media (max-width: 630px) {
+  #site-title-homepage {
+    width: 187px;
+  }
+}
+@media (max-width: 1440px) {
+  .banner .banner_video {
+    display: none;
+  }
+  .cloud-animation {
+    overflow: inherit;
+  }
+}
+@media screen {
+  .main-navigation {
+    height: 80px;
+  }
+}/*# sourceMappingURL=style.css.map */

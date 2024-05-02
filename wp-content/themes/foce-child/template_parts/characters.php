@@ -8,7 +8,7 @@ $args = array(
 $characters_query = new WP_Query($args);
 ?>
 
-<article id="characters" class="hidden">
+<article id="characters" class="hidden appear fade-in-down">
     <h3>
         <div class="characters__title effet_move-up">Les personnages</div>
     </h3>

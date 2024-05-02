@@ -4,7 +4,7 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-    <section class="banner hidden appear">
+    <section class="banner hidden appear fade-in-down">
         <video class="banner_video" autoplay muted loop>
             <source src="<?php echo get_stylesheet_directory_uri() . '/assets/video/animation_homepage.mp4'; ?>" type="video/mp4" />
         </video>
@@ -12,13 +12,13 @@ get_header();
     </section>
 
     <span id="histoire"></span>
-    <section class="story hidden appear">
+    <section class="story hidden ">
         <h2>
             <div class="animationTitle animatedElement effet_move-up">
                 L'histoire
             </div>
         </h2>
-        <article id="" class="story__article hidden appear">
+        <article id="" class="story__article appear fade-in-up">
             <p><?php echo get_theme_mod('story'); ?></p>
         </article>
         <span id="personnages"></span>
@@ -26,7 +26,7 @@ get_header();
         get_template_part('template_parts/characters');
         ?>
         <span id="lieu"></span>
-        <article id="place" class="hidden appear">
+        <article id="place" class="hidden appear fade-in-up">
             <div>
                 <h3>
                     <div class="animationTitle animatedElement ">
@@ -43,7 +43,7 @@ get_header();
         </article>
     </section>
     <span id="studio"></span>
-    <section id="studio" class="hidden">
+    <section id="studio" class="hidden appear fade-in-down">
         <h2>
             <div class="animationTitle animatedElement ">
                 Studio Koukaki
@@ -54,7 +54,7 @@ get_header();
             <p>Avec une créativité et une capacité d’innovation mondialement reconnues, une expertise éditoriale et commerciale à la pointe de son industrie, le Studio Koukaki se positionne comme un acteur incontournable dans un marché en forte croissance. Koukaki construit chaque année de véritables succès et capitalise sur de puissantes marques historiques. Cette année, il vous présente “Fleurs d’oranger et chats errants”.</p>
         </div>
     </section>
-    <section id="oscars" class="oscars">
+    <section id="oscars" class="oscars appear fade-in-down">
         <div class="oscars__title ">
             <img src="<?php echo get_theme_file_uri() . '/assets/images/fond_orange_oscars.png'; ?>" alt="fond du titre des nominations">
             <h3>Fleurs d’oranger & chats errants est nominé aux Oscars Short Film Animated de 2022 !</h3>

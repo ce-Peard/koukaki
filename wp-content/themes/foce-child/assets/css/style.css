@@ -393,7 +393,7 @@ div.other-characters {
 
 /* ANIMATION NUAGES */
 .story #place {
-  background-image: url("http://localhost/koukaki/wp-content/uploads/2024/04/Studio_Koukaki-image_place.png");
+  background-image: url("../images/Studio_Koukaki-image_place.png");
   z-index: 10;
   display: flex;
   position: relative;
@@ -472,23 +472,30 @@ div.other-characters {
   animation: cloudMoveReverse 4s forwards;
 }
 
-/* Apparition du contenu au défilement */
-.appear-loaded .appear [class*=appear-] {
-  opacity: 0 !important;
-  transform: translateY(100px) !important;
-  transition: 10s !important;
+/* effet de fade-in des sections */
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s, transform 2s;
 }
 
-.appear-loaded [class*=appear-] {
-  transition: 1s cubic-bezier(0.5, 0, 0, 1);
+.fade-in-down {
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: opacity 1s, transform 2s;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .appear [class*=appear-] {
-    opacity: 1 !important;
-    transform: translateY(0px) !important;
-  }
+.fade-in-active.fade-in-up {
+  opacity: 1;
+  transform: translateY(0);
 }
+
+.fade-in-active.fade-in-down {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* NOMINATION OSCARS */
 .oscars {
   position: relative;
