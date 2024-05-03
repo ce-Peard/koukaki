@@ -1,48 +1,54 @@
 jQuery(document).ready(function ($) {
   /*MENU BURGER*/
-  // Icone menu burger
+  /*MENU BURGER*/
 
+  // Sélection des éléments nécessaires
   const icone_menuBurger = document.querySelector(".icone_menu-burger");
   const trait1 = document.querySelector(".trait1");
   const trait2 = document.querySelector(".trait2");
   const trait3 = document.querySelector(".trait3");
+  const menuOuvert = document.querySelector(".menu_ouvert");
+  const liensMenu = document.querySelectorAll(".menu_ouvert a"); // Sélection de tous les liens dans le menu ouvert
 
-  icone_menuBurger.addEventListener("click", function () {
+  // Fonction pour ouvrir ou fermer le menu
+  function toggleMenu() {
     icone_menuBurger.classList.toggle("crossed");
     if (icone_menuBurger.classList.contains("crossed")) {
-      trait1.style.transform = "rotate(45deg) translate(5px, 5px)";
+      trait1.style.transform = "rotate(45deg) translate(7px, 5px)";
       trait2.style.opacity = "0";
-      trait3.style.transform = "rotate(-45deg) translate(5px, -5px)";
+      trait3.style.transform = "rotate(-45deg) translate(7px, -5px)";
+      menuOuvert.style.display = "flex";
+      setTimeout(() => {
+        menuOuvert.style.opacity = "1";
+      }, 10);
     } else {
       trait1.style.transform = "none";
       trait2.style.opacity = "1";
       trait3.style.transform = "none";
-    }
-  });
-
-  // ouverture-fermeture menu-burger
-
-  // document.querySelector('.menu-burger').addEventListener('click', function() {
-  //   const menuOuvert = document.querySelector('.menu_ouvert');
-  //   if (menuOuvert.style.display === 'flex') {
-  //     menuOuvert.style.display = 'none';
-  //   } else {
-  //     menuOuvert.style.display = 'flex';
-  //   }
-  // });
-  document.querySelector(".menu-burger").addEventListener("click", function () {
-    const menuOuvert = document.querySelector(".menu_ouvert");
-    if (menuOuvert.style.display === "flex") {
-      menuOuvert.style.opacity = "0"; // Réinitialiser l'opacité à 0
+      menuOuvert.style.opacity = "0";
       setTimeout(() => {
-        menuOuvert.style.display = "none"; // Masquer le menu_ouvert après le fade-out
-      }, 300); // Délai pour la transition de fade-out
-    } else {
-      menuOuvert.style.display = "flex"; // Afficher le menu_ouvert
-      setTimeout(() => {
-        menuOuvert.style.opacity = "1"; // Ajouter l'opacité à 1 pour le fade-in
-      }, 10); // Délai pour déclencher la transition
+        menuOuvert.style.display = "none";
+      }, 300);
     }
+  }
+
+  // Ajout de l'écouteur d'événements sur l'icône du menu burger
+  icone_menuBurger.addEventListener("click", toggleMenu);
+
+  // Ajout de l'écouteur d'événements sur chaque lien du menu pour fermer le menu après un clic
+  liensMenu.forEach((lien) => {
+    lien.addEventListener("click", () => {
+      if (menuOuvert.style.display === "flex") {
+        icone_menuBurger.classList.remove("crossed");
+        trait1.style.transform = "none";
+        trait2.style.opacity = "1";
+        trait3.style.transform = "none";
+        menuOuvert.style.opacity = "0";
+        setTimeout(() => {
+          menuOuvert.style.display = "none";
+        }, 300);
+      }
+    });
   });
 
   // Initialize Swiper
