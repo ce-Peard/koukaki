@@ -101,39 +101,27 @@ jQuery(document).ready(function ($) {
 
   // Animation au scroll
   // Fonction pour animer les nuages lors du défilement de la page
+  let lastScrollPosition = 0;
+
   function animateCloudsOnScroll() {
-    const cloud = document.querySelector(".cloud");
-    const scrollPosition = window.scrollY;
-    const windowHeight = window.innerHeight;
-    // clouds.forEach((cloud) => {
-    const cloudPosition = cloud.getBoundingClientRect().top + window.scrollY;
-
-    // Vérifie si le nuage est visible à l'écran
-    if (
-      cloudPosition < scrollPosition + windowHeight &&
-      cloudPosition + cloud.clientHeight > scrollPosition
-    ) {
-      // Nuage visible à l'écran
-      if (scrollPosition > cloudPosition) {
-        // Défilement vers la gauche : appliquer animation reverse
-        cloud.classList.add("cloud-animation-reverse");
-        cloud.classList.remove("cloud-animation");
-      } else {
-        // Défilement vers la droite : appliquer animation normale
-        cloud.classList.add("cloud-animation");
-        cloud.classList.remove("cloud-animation-reverse");
-      }
-    } else {
-      // Nuage non visible à l'écran : retirer les animations
-      cloud.classList.remove("cloud-animation");
-      cloud.classList.remove("cloud-animation-reverse");
-    }
-    // });
+    const clouds = document.querySelectorAll(".cloud");
+    const currentScrollPosition = window.scrollY;
+  
+    clouds.forEach(cloud => {
+      let displacement = (currentScrollPosition - lastScrollPosition) / 5; // Diviseur pour réduire l'effet
+      let currentTransform = parseFloat(cloud.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+  
+      // Appliquer le nouveau déplacement
+      cloud.style.transform = `translateX(${currentTransform + displacement}px)`;
+    });
+  
+    // Mise à jour de la dernière position de défilement
+    lastScrollPosition = currentScrollPosition;
   }
-
+  
   // Écouter l'événement de défilement de la fenêtre pour animer les nuages
   window.addEventListener("scroll", animateCloudsOnScroll);
-
+  
   // Animer les nuages lors du chargement initial de la page
   animateCloudsOnScroll();
 

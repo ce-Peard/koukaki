@@ -394,63 +394,66 @@ div.other-characters
   object-fit: contain
   .cloud
     position: relative
+    left: 165px // Position initiale pour tous les nuages
+    transition: transform 0.5s ease // Transition pour lisser le mouvement de transform
+
   .big_cloud
     position: relative
     z-index: 100
     bottom: 320px
-    left: 881px
     filter: blur(15px)
     opacity: 0.8
+
   .little_cloud
     position: relative
     z-index: 100
     bottom: 250px
-    left: 793px
     filter: blur(10px)
     opacity: 0.8
 
-@keyframes moveLeftToRight_little
-  from
-    left: 493px
+  
+// @keyframes moveLeftToRight_little
+//   from
+//     left: 493px
 
-  to
-    left: 793px
+//   to
+//     left: 793px
 
-@keyframes moveRightToLeft_little
-  from
-    left: 793px
+// @keyframes moveRightToLeft_little
+//   from
+//     left: 793px
 
-  to
-    left: 493px
+//   to
+//     left: 493px
 
-@keyframes moveLeftToRight_big
-  from
-    left: 793px
+// @keyframes moveLeftToRight_big
+//   from
+//     left: 793px
 
-  to
-    left: 1031px
+//   to
+//     left: 1031px
 
-@keyframes cloudMove
-  from
-    transform: translateX(0%) //Début à la position finale de l'animation initiale
-  to
-    opacity: 1
-    transform: translateX(-400px) // Fin à la position initiale (aucun décalage)
+// @keyframes cloudMove
+//   from
+//     transform: translateX(0%) //Début à la position finale de l'animation initiale
+//   to
+//     // opacity: 1
+//     transform: translateX(-400px) // Fin à la position initiale (aucun décalage)
 
-@keyframes cloudMoveReverse
-  from
-    opacity: 1
-    transform: translateX(-400px) // Début à la position finale de l'animation initiale
-  to
-    opacity: 1
-    transform: translateX(0%) // Fin à la position initiale (aucun décalage) */
+// @keyframes cloudMoveReverse
+//   from
+//     // opacity: 1
+//     transform: translateX(-400px) // Début à la position finale de l'animation initiale
+//   to
+//     // opacity: 1
+//     transform: translateX(0%) // Fin à la position initiale (aucun décalage) */
 
-.cloud-animation
-  position: absolute
-  animation: cloudMove 2s forwards // forwards pour maintenir la dernière valeur d'animation */
+// .cloud-animation
+//   // position: absolute
+//   animation: cloudMove 10s forwards // forwards pour maintenir la dernière valeur d'animation */
 
-.cloud-animation-reverse
-  animation: cloudMoveReverse 4s forwards
+// .cloud-animation-reverse
+//   animation: cloudMoveReverse 10s forwards
 
 /* effet de fade-in des sections */
 
@@ -591,9 +594,9 @@ div.other-characters
   #site-title-homepage
     width: 187px
 
-@media (max-width: 1440px)
-  .cloud-animation
-    overflow: inherit
+// @media (max-width: 1440px)
+//   .cloud-animation
+//     overflow: inherit
 
 @media screen
   .main-navigation

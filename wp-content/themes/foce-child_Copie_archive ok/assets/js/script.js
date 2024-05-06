@@ -1,8 +1,8 @@
 jQuery(document).ready(function ($) {
-
+  /*MENU BURGER*/
   /*MENU BURGER*/
 
-// Sélection des éléments nécessaires
+  // Sélection des éléments nécessaires
   const icone_menuBurger = document.querySelector(".icone_menu-burger");
   const trait1 = document.querySelector(".trait1");
   const trait2 = document.querySelector(".trait2");
@@ -14,9 +14,9 @@ jQuery(document).ready(function ($) {
   function toggleMenu() {
     icone_menuBurger.classList.toggle("crossed");
     if (icone_menuBurger.classList.contains("crossed")) {
-      trait1.style.transform = "rotate(45deg) translate(5px, 5px)";
+      trait1.style.transform = "rotate(45deg) translate(7px, 5px)";
       trait2.style.opacity = "0";
-      trait3.style.transform = "rotate(-45deg) translate(5px, -5px)";
+      trait3.style.transform = "rotate(-45deg) translate(7px, -5px)";
       menuOuvert.style.display = "flex";
       setTimeout(() => {
         menuOuvert.style.opacity = "1";
@@ -36,7 +36,7 @@ jQuery(document).ready(function ($) {
   icone_menuBurger.addEventListener("click", toggleMenu);
 
   // Ajout de l'écouteur d'événements sur chaque lien du menu pour fermer le menu après un clic
-  liensMenu.forEach(lien => {
+  liensMenu.forEach((lien) => {
     lien.addEventListener("click", () => {
       if (menuOuvert.style.display === "flex") {
         icone_menuBurger.classList.remove("crossed");
@@ -51,7 +51,7 @@ jQuery(document).ready(function ($) {
     });
   });
 
-  /************** INITIALIZE SWIPER ********/
+  // Initialize Swiper
   var swiper = new Swiper(".swiper-container", {
     effect: "coverflow",
     spaceBetween: 60,
@@ -59,7 +59,7 @@ jQuery(document).ready(function ($) {
     centeredSlides: true,
     loop: true,
     speed: 900,
-    preventClicks: true,
+    preventClicks: true, //permet de mettre en pause au clic
     slidesPerView: 3,
     coverflowEffect: {
       rotate: 60,
@@ -73,9 +73,9 @@ jQuery(document).ready(function ($) {
         swiper.slideTo(this.clickedIndex);
       },
     },
-    // autoplay: {
-    //   delay: 2500,
-    // },
+    autoplay: {
+      delay: 2500,
+    },
   });
 
   //FADE-IN SECTIONS
@@ -115,11 +115,11 @@ jQuery(document).ready(function ($) {
     ) {
       // Nuage visible à l'écran
       if (scrollPosition > cloudPosition) {
-        // Défilement vers le haut : appliquer animation reverse
+        // Défilement vers la gauche : appliquer animation reverse
         cloud.classList.add("cloud-animation-reverse");
         cloud.classList.remove("cloud-animation");
       } else {
-        // Défilement vers le bas : appliquer animation normale
+        // Défilement vers la droite : appliquer animation normale
         cloud.classList.add("cloud-animation");
         cloud.classList.remove("cloud-animation-reverse");
       }
@@ -160,44 +160,27 @@ jQuery(document).ready(function ($) {
   // window.addEventListener("scroll", handleScroll, { passive: true });
 }); /* Fin de la balise jQuery */
 
-/* Apparition au défilement */
-/*API Intersection Observer pour détecter quand des éléments de la page deviennent visibles à mesure que l'utilisateur fait défiler la page*/
+// animation fade-in des sections
 
-const ratio = 0.1; /*l'élément est considéré comme visible lorsque 10 % de celui-ci est visible dans la fenêtre*/
-const options = {
-  root: null /*observe toute la fenêtre*/,
-  rootMargin: "0px" /*sans marge supplémentaire*/,
-  threshold: ratio /*utilise le ratio défini précédemment*/,
-};
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll(".appear"); //récuperer ttes les sections avec la classe appear
 
-const handleIntersect = function (entries, observer) {
-  /*Définit une fonction de rappel qui est appelée chaque fois que les éléments observés entrent dans ou sortent de la vue.*/
-  entries.forEach(function (entry) {
-    /*pour chaque élément observé, vérifie si le ratio d'intersection de cet élément est supérieur au ratio défini*/ if (
-      entry.intersectionRatio > ratio
-    ) {
-      /*si oui*/
-      entry.target.classList.remove(
-        "appear"
-      ); /*il supprime la classe CSS "appear" de l'élément */
-      observer.unobserve(entry.target); /*et cesse de l'observer */
-    }
+  const observer = new IntersectionObserver( //définit notre observer
+    function (entries) {
+      //passer en paramètre à cet observer tous les élémts à observer
+      entries.forEach(function (entry) {
+        //pr chaque élémt à observer
+        if (entry.isIntersecting) {
+          //si l'élémt est actuelmt affiché à l'écran
+          entry.target.classList.add("fade-in-active"); //alors ajouter la classe fade-in-active pour activer l'animation d'apparition au scroll
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  sections.forEach(function (section) {
+    //pour ttes les sections récupérées
+    observer.observe(section); //inscrit ces sections dans la liste des élemts observés par notre intersectionObserver
   });
-};
-
-document.documentElement.classList.add(
-  "appear-loaded"
-); /*Ajoute la classe CSS "appear-loaded" à l'élément racine du document HTML lorsque le DOM est chargé*/
-window.addEventListener("DOMContentLoaded", function () {
-  /*Attend que le DOM soit complètement chargé avant d'exécuter le code à l'intérieur de la fonction de rappel.*/ const observer =
-    new IntersectionObserver(
-      handleIntersect,
-      options
-    ); /* à l'intérieur de cette fonction, un nouvel observateur d'intersection est créé */
-  document.querySelectorAll(".appear").forEach(function (r) {
-    /* Sélectionne tous les éléments ayant la classe CSS "appear" et pour chacun d'eux, observe leur intersection avec la fenêtre en utilisant l'observateur d'intersection créé précédemment. Lorsque ces éléments deviennent visibles selon le ratio défini, la fonction handleIntersect sera appelée*/ observer.observe(
-      r
-    );
-  });
-  // console.log(observer);
 });

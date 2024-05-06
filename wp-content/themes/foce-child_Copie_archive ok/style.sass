@@ -1,4 +1,9 @@
 
+/* GLOBAL */
+
+.site-main
+  overflow: hidden
+
   /* TITRE DU SITE */
 
 #site-title-homepage
@@ -7,7 +12,9 @@
   justify-content: space-evenly
   align-items: center
 
-/* BURGER MENU */
+/*************/
+/*BURGER MENU*/
+/*************/
 
 .main-navigation
   display: flex
@@ -379,11 +386,8 @@ div.other-characters
 
 /* ANIMATION NUAGES */
 
-#place
-  overflow-y: hidden
-
 .story #place
-  background-image: url('http://localhost/koukaki/wp-content/uploads/2024/04/Studio_Koukaki-image_place.png')
+  background-image: url('../images/Studio_Koukaki-image_place.png')
   z-index: 10
   display: flex
   position: relative
@@ -448,20 +452,25 @@ div.other-characters
 .cloud-animation-reverse
   animation: cloudMoveReverse 4s forwards
 
-/* Apparition du contenu au défilement */
+/* effet de fade-in des sections */
 
-.appear-loaded .appear [class*="appear-"]
-  opacity: 0 !important
-  transform: translateY(100px) !important
-  transition: 10s !important
+.fade-in-up
+  opacity: 0
+  transform: translateY(100px)
+  transition: opacity 1s, transform 2s
 
-.appear-loaded [class*="appear-"]
-  transition: 1s cubic-bezier(0.5, 0, 0, 1)
+.fade-in-down
+  opacity: 0
+  transform: translateY(-100px)
+  transition: opacity 1s, transform 2s
 
-@media (prefers-reduced-motion: reduce)
-  .appear [class*="appear-"]
-    opacity: 1 !important
-    transform: translateY(0px) !important
+.fade-in-active.fade-in-up
+  opacity: 1
+  transform: translateY(0)
+
+.fade-in-active.fade-in-down
+  opacity: 1
+  transform: translateY(0)
 
     // [class*="appear-"] 
     // transition-duration: 0s !important
@@ -483,7 +492,6 @@ div.other-characters
   gap: 40px 0
   justify-content: center
   align-items: center
-  overflow-x: clip
 
 .oscars__image
   margin-top: -82px
@@ -524,13 +532,56 @@ div.other-characters
 .site-footer::after
   display: none
 
+/* MEDIA QUERY */
+
 @media (max-width: 320px)
   .menu-burger
     right: 1em
 
-@media (max-width: 540px)
-  h3
-    font-size: 1.5rem
+@media (max-width: 330px)
+  #studio
+    h2
+      font-size: 1.9rem
+
+@media (min-width: 331px) and (max-width: 471px)
+  #studio
+    h2
+      font-size: 2.1rem
+
+@media (max-width: 356px)
+  .oscars__title
+    h3
+      font-size: 1.3rem
+      line-height: 1.2rem
+@media (min-width: 357px) and (max-width: 424px)
+  .oscars__title
+    h3
+      font-size: 1.3rem
+      line-height: 1.5rem
+@media (min-width: 425px) and (max-width: 536px)
+  .oscars__title
+    h3
+      font-size: 1.5rem
+      line-height: 2rem
+@media (min-width: 537px) and (max-width: 762px)
+  .oscars__title
+    h3
+      font-size: 2rem
+      line-height: 2rem
+
+@media (max-width: 361px)
+  #characters, #place
+    h3
+      font-size: 1.6rem
+      line-height: 1.1rem
+@media (min-width: 362px) and (max-width: 401px)
+  #characters, #place
+    h3
+      font-size: 1.8rem
+@media (min-width: 402px) and (max-width: 502px)
+  #characters, #place
+    h3
+      font-size: 2rem
 
 @media (max-width: 440px)
   .menu-burger
@@ -540,17 +591,10 @@ div.other-characters
   #site-title-homepage
     width: 187px
 
-
 @media (max-width: 1440px)
-  .banner
-    .banner_video
-      display: none
-
   .cloud-animation
     overflow: inherit
 
-
-@media screen 
+@media screen
   .main-navigation
     height: 80px
-
