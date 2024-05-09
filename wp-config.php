@@ -1,4 +1,5 @@
 <?php
+
 /**
  * La configuration de base de votre installation WordPress.
  *
@@ -21,23 +22,23 @@
 
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
 /** Nom de la base de données de WordPress. */
-define( 'DB_NAME', 'koukaki' );
+define('DB_NAME', 'koukaki');
 
 /** Utilisateur de la base de données MySQL. */
-define( 'DB_USER', 'root' );
+define('DB_USER', 'root');
 
 /** Mot de passe de la base de données MySQL. */
-define( 'DB_PASSWORD', '' );
+define('DB_PASSWORD', '');
 
 /** Adresse de l’hébergement MySQL. */
-define( 'DB_HOST', 'localhost' );
+define('DB_HOST', 'localhost');
 
 /** Jeu de caractères à utiliser par la base de données lors de la création des tables. */
-define( 'DB_CHARSET', 'utf8mb4' );
+define('DB_CHARSET', 'utf8mb4');
 
 /** Type de collation de la base de données.
-  * N’y touchez que si vous savez ce que vous faites.
-  */
+ * N’y touchez que si vous savez ce que vous faites.
+ */
 define('DB_COLLATE', '');
 
 /**#@+
@@ -51,14 +52,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         '%^cy*DR`QPtr?Y-!IF&nl^Z9Ag))E<wm,/QJz=N6/M-S ?/y+Ek${Lv9xi~9JmX|' );
-define( 'SECURE_AUTH_KEY',  'S.L}[Y&`D;TN7kWk(XgORnOwyXuD^A{ -O$&95uiqpKE[adJ4^8;LCVo{0*8Z<!W' );
-define( 'LOGGED_IN_KEY',    '4UDW~JI7B-8(VrBa/wOMW0Grq%f=_>unc2A:B}oN_ys:=*e&l/;+(an10XQ<o+ow' );
-define( 'NONCE_KEY',        '!4hqLeC+K8O!+/6.Xu5=45fALeU!H#Aru^}I&k>;5pxpxb@WAjw0Cu??h[O/tRhY' );
-define( 'AUTH_SALT',        '_96o hLG9Ave,|hqj6{cRhpf0_wy6?5?ZZAQg1}2FtNo?M3,;;%=P]~GKyYz`l`#' );
-define( 'SECURE_AUTH_SALT', ']bm<:h; 46[++zc>;FxJyM_77%mTb<$l51;b}Js~s6_.(SdEOt2Kf!H{WSFsD2>K' );
-define( 'LOGGED_IN_SALT',   '>M#zYsQ]s,$RG5RH_|1 Fnr9S1R@|I}o7B*67J]BNP[`ucH$+men`H`dzN[>`TyI' );
-define( 'NONCE_SALT',       '|MPdI;Q_=p d]}NV!,>Nm4-rUR$m[IAh_6.p2Ae%sx~|QQu?9*o?.iNGjf+Ky[$!' );
+define('AUTH_KEY',         '%^cy*DR`QPtr?Y-!IF&nl^Z9Ag))E<wm,/QJz=N6/M-S ?/y+Ek${Lv9xi~9JmX|');
+define('SECURE_AUTH_KEY',  'S.L}[Y&`D;TN7kWk(XgORnOwyXuD^A{ -O$&95uiqpKE[adJ4^8;LCVo{0*8Z<!W');
+define('LOGGED_IN_KEY',    '4UDW~JI7B-8(VrBa/wOMW0Grq%f=_>unc2A:B}oN_ys:=*e&l/;+(an10XQ<o+ow');
+define('NONCE_KEY',        '!4hqLeC+K8O!+/6.Xu5=45fALeU!H#Aru^}I&k>;5pxpxb@WAjw0Cu??h[O/tRhY');
+define('AUTH_SALT',        '_96o hLG9Ave,|hqj6{cRhpf0_wy6?5?ZZAQg1}2FtNo?M3,;;%=P]~GKyYz`l`#');
+define('SECURE_AUTH_SALT', ']bm<:h; 46[++zc>;FxJyM_77%mTb<$l51;b}Js~s6_.(SdEOt2Kf!H{WSFsD2>K');
+define('LOGGED_IN_SALT',   '>M#zYsQ]s,$RG5RH_|1 Fnr9S1R@|I}o7B*67J]BNP[`ucH$+men`H`dzN[>`TyI');
+define('NONCE_SALT',       '|MPdI;Q_=p d]}NV!,>Nm4-rUR$m[IAh_6.p2Ae%sx~|QQu?9*o?.iNGjf+Ky[$!');
 /**#@-*/
 
 /**
@@ -89,8 +90,8 @@ define('WP_DEBUG', false);
 /* C’est tout, ne touchez pas à ce qui suit ! Bonne publication. */
 
 /** Chemin absolu vers le dossier de WordPress. */
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+if (!defined('ABSPATH'))
+  define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Réglage des variables de WordPress et de ses fichiers inclus. */
 require_once(ABSPATH . 'wp-settings.php');
