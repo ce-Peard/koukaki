@@ -96,6 +96,10 @@
   a
     font-size: 15px
 
+#studio, #personnages, #lieu, #histoire
+  padding-top: 90px
+  margin-top: -90px
+
 /* animations menu ouvert*/
 .menu_ouvert_histoire, .menu_ouvert_personnages, .menu_ouvert_lieu, .menu_ouvert_studio
   position: relative
@@ -169,16 +173,6 @@
     z-index: 1
     opacity: 1
     left: auto
-    // animation: move-down 2s 300ms both
-
-  // @keyframes move-down
-  //   0%
-  //     transform: translateY(-300px)
-  //     opacity: 0
-
-  //   100% 
-  //     transform: translateY(0)
-  //     visibility: visible
 
   .banner_logo
     position: sticky
@@ -235,9 +229,6 @@
     100%
       transform: translateY(0)
 
-// .hidden
-//   display: none
-
 /* ANIMATION TITRES */
 
 @keyframes move-up
@@ -247,16 +238,8 @@
 
   100%
     transform: translateY(0)
-    // opacity: 1
 
-.animationTitle
-  // animation: move-up 2s 300ms both
-  // opacity: 0
-
-// .animationTitle
-//   opacity: 0
-
-  // ROTATION FLEURS
+// ROTATION FLEURS
 
 // Définition des animations
 
@@ -411,49 +394,6 @@ div.other-characters
     filter: blur(10px)
     opacity: 0.8
 
-// @keyframes moveLeftToRight_little
-//   from
-//     left: 493px
-
-//   to
-//     left: 793px
-
-// @keyframes moveRightToLeft_little
-//   from
-//     left: 793px
-
-//   to
-//     left: 493px
-
-// @keyframes moveLeftToRight_big
-//   from
-//     left: 793px
-
-//   to
-//     left: 1031px
-
-// @keyframes cloudMove
-//   from
-//     transform: translateX(0%) //Début à la position finale de l'animation initiale
-//   to
-//     // opacity: 1
-//     transform: translateX(-400px) // Fin à la position initiale (aucun décalage)
-
-// @keyframes cloudMoveReverse
-//   from
-//     // opacity: 1
-//     transform: translateX(-400px) // Début à la position finale de l'animation initiale
-//   to
-//     // opacity: 1
-//     transform: translateX(0%) // Fin à la position initiale (aucun décalage) */
-
-// .cloud-animation
-//   // position: absolute
-//   animation: cloudMove 10s forwards // forwards pour maintenir la dernière valeur d'animation */
-
-// .cloud-animation-reverse
-//   animation: cloudMoveReverse 10s forwards
-
 /* effet de fade-in des sections */
 
 .fade-in-up
@@ -473,16 +413,6 @@ div.other-characters
 .fade-in-active.fade-in-down
   opacity: 1
   transform: translateY(0)
-
-    // [class*="appear-"] 
-    // transition-duration: 0s !important
-    // transition-delay: 0s !important
-
-// .little_cloud
-//   animation: moveLeftToRight_little 10s linear
-
-// .big_cloud
-//   animation: moveLeftToRight_big 10s linear
 
 /* NOMINATION OSCARS */
 

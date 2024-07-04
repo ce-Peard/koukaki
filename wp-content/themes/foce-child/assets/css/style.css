@@ -409,13 +409,12 @@ div.other-characters {
 }
 .story #place .cloud {
   position: relative;
-  left: 165px;
-  transition: transform 0.5s ease;
 }
 .story #place .big_cloud {
   position: relative;
   z-index: 100;
   bottom: 320px;
+  left: 881px;
   filter: blur(15px);
   opacity: 0.8;
 }
@@ -423,8 +422,61 @@ div.other-characters {
   position: relative;
   z-index: 100;
   bottom: 250px;
+  left: 793px;
   filter: blur(10px);
   opacity: 0.8;
+}
+
+@keyframes moveLeftToRight_little {
+  from {
+    left: 493px;
+  }
+  to {
+    left: 793px;
+  }
+}
+@keyframes moveRightToLeft_little {
+  from {
+    left: 793px;
+  }
+  to {
+    left: 493px;
+  }
+}
+@keyframes moveLeftToRight_big {
+  from {
+    left: 793px;
+  }
+  to {
+    left: 1031px;
+  }
+}
+@keyframes cloudMove {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-400px);
+  }
+}
+@keyframes cloudMoveReverse {
+  from {
+    opacity: 1;
+    transform: translateX(-400px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+.cloud-animation {
+  position: absolute;
+  animation: cloudMove 2s forwards;
+}
+
+.cloud-animation-reverse {
+  animation: cloudMoveReverse 4s forwards;
 }
 
 /* effet de fade-in des sections */
@@ -573,6 +625,11 @@ div.other-characters {
 @media (max-width: 630px) {
   #site-title-homepage {
     width: 187px;
+  }
+}
+@media (max-width: 1440px) {
+  .cloud-animation {
+    overflow: inherit;
   }
 }
 @media screen {

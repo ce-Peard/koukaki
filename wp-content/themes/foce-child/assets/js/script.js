@@ -1,6 +1,5 @@
 jQuery(document).ready(function ($) {
   /*MENU BURGER*/
-  /*MENU BURGER*/
 
   // Sélection des éléments nécessaires
   const icone_menuBurger = document.querySelector(".icone_menu-burger");
@@ -37,7 +36,8 @@ jQuery(document).ready(function ($) {
 
   // Ajout de l'écouteur d'événements sur chaque lien du menu pour fermer le menu après un clic
   liensMenu.forEach((lien) => {
-    lien.addEventListener("click", () => {
+    lien.addEventListener("click", (event) => {
+      event.preventDefault(); // Ajouter cette ligne
       if (menuOuvert.style.display === "flex") {
         icone_menuBurger.classList.remove("crossed");
         trait1.style.transform = "none";
@@ -46,6 +46,7 @@ jQuery(document).ready(function ($) {
         menuOuvert.style.opacity = "0";
         setTimeout(() => {
           menuOuvert.style.display = "none";
+          window.location.hash = lien.getAttribute("href"); // Naviguer manuellement à l'ancre
         }, 300);
       }
     });
@@ -78,74 +79,44 @@ jQuery(document).ready(function ($) {
     },
   });
 
-  //FADE-IN SECTIONS
-
-  // window.addEventListener("load", function () {
-  //   var sections = document.querySelectorAll(".hidden");
-  //   sections.forEach(function (section) {
-  //     section.classList.remove("hidden");
-  //     section.style.opacity = 0;
-  //     var fadeInEffect = setInterval(function () {
-  //       if (parseFloat(section.style.opacity) < 1) {
-  //         section.style.opacity = parseFloat(section.style.opacity) + 0.1;
-  //       } else {
-  //         clearInterval(fadeInEffect);
-  //       }
-  //     }, 100);
-  //   });
-  // });
-
-  // ANIMATION TITRES au scroll
-
   // SCROLL NUAGES
 
-  // Animation au scroll
-  // Fonction pour animer les nuages lors du défilement de la page
   let lastScrollPosition = 0;
+  //stocke la dernière position de défilement de la fenêtre. Initialement fixée à 0
 
   function animateCloudsOnScroll() {
+    //fonction est appelée à chaque fois que l'utilisateur fait défiler la page
     const clouds = document.querySelectorAll(".cloud");
+    //sélectionne tous les éléments de la page qui ont la classe "cloud"
     const currentScrollPosition = window.scrollY;
-  
-    clouds.forEach(cloud => {
-      let displacement = (currentScrollPosition - lastScrollPosition) / 5; // Diviseur pour réduire l'effet
-      let currentTransform = parseFloat(cloud.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
-  
+    //stocke la position actuelle de défilement de la fenêtre en utilisant window.scrollY ( propriété JS qui renvoie le nombre de pixels que le document a  défilé verticalement à partir du haut de la fenêtre)
+
+    clouds.forEach((cloud) => {
+      //pour chaque élément "cloud", on exécute la fonction de rappel
+      let displacement = (currentScrollPosition - lastScrollPosition) / 5;
+      //on calcule le déplacement des nuages en fonction de la différence entre la position de défilement actuelle et la dernière position de défilement, divisée par 5 pour réduire l'effet
+      let currentTransform =
+        parseFloat(
+          cloud.style.transform.replace("translateX(", "").replace("px)", "")
+        ) || 0;
+      //on extrait la valeur actuelle de la transformation translateX de l'élément "cloud" en utilisant parseFloat pour convertir la chaîne en nombre. Si aucune transformation n'est appliquée, la valeur par défaut est 0
+
       // Appliquer le nouveau déplacement
-      cloud.style.transform = `translateX(${currentTransform + displacement}px)`;
+      cloud.style.transform = `translateX(${
+        //met à jour la transformation translateX de l'élément "cloud" en ajoutant le déplacement calculé à la transformation actuelle
+        currentTransform + displacement
+      }px)`;
     });
-  
-    // Mise à jour de la dernière position de défilement
+
     lastScrollPosition = currentScrollPosition;
+    //met à jour la variable lastScrollPosition avec la position de défilement actuelle pour qu'elle soit prête pour la prochaine itération
   }
-  
+
   // Écouter l'événement de défilement de la fenêtre pour animer les nuages
   window.addEventListener("scroll", animateCloudsOnScroll);
-  
-  // Animer les nuages lors du chargement initial de la page
+
   animateCloudsOnScroll();
-
-  // function handleScroll() {
-  //   var elements = document.querySelectorAll(".animatedElement");
-
-  //   elements.forEach(function (element) {
-  //     var position = element.getBoundingClientRect();
-
-  //     // Vérifie si l'élément est dans la fenêtre en fonction de la position de défilement
-  //     if (
-  //       position.top < window.innerHeight &&
-  //       position.bottom >= 0 &&
-  //       position.left < window.innerWidth &&
-  //       position.right >= 0 &&
-  //       !element.classList.contains("animate")
-  //     ) {
-  //       element.classList.add("animate");
-  //     }
-  //   });
-  // }
-
-  // //Utilisez un événement de défilement passif pour améliorer les performances
-  // window.addEventListener("scroll", handleScroll, { passive: true });
+  //ajout d'un écouteur d'événement à la fenêtre pour appeler la fonction animateCloudsOnScroll à chaque fois que l'utilisateur fait défiler la page
 }); /* Fin de la balise jQuery */
 
 // animation fade-in des sections
@@ -155,12 +126,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const observer = new IntersectionObserver( //définit notre observer
     function (entries) {
-      //passer en paramètre à cet observer tous les élémts à observer
+      //passer en paramètre à cet observer tous les éléments à observer
       entries.forEach(function (entry) {
-        //pr chaque élémt à observer
+        //pour chaque élément à observer
         if (entry.isIntersecting) {
-          //si l'élémt est actuelmt affiché à l'écran
-          entry.target.classList.add("fade-in-active"); //alors ajouter la classe fade-in-active pour activer l'animation d'apparition au scroll
+          //si l'élément est actuellement affiché à l'écran
+          entry.target.classList.add("fade-in-active");
+          //alors ajouter la classe fade-in-active pour activer l'animation d'apparition au scroll
         }
       });
     },
@@ -168,7 +140,8 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   sections.forEach(function (section) {
-    //pour ttes les sections récupérées
-    observer.observe(section); //inscrit ces sections dans la liste des élemts observés par notre intersectionObserver
+    //pour toutes les sections récupérées
+    observer.observe(section);
+    //inscrit ces sections dans la liste des élements observés par notre intersectionObserver
   });
 });
