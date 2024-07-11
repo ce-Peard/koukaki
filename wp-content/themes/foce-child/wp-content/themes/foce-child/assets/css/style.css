@@ -174,7 +174,6 @@
   -o-object-fit: contain;
      object-fit: contain;
   height: 800px;
-  overflow-x: clip;
 }
 .banner .banner_video {
   position: absolute;
@@ -183,6 +182,7 @@
   z-index: 1;
   opacity: 1;
   left: auto;
+  overflow: hidden;
 }
 .banner .banner_logo {
   position: sticky;
@@ -407,7 +407,6 @@ div.other-characters {
   position: relative;
   -o-object-fit: contain;
      object-fit: contain;
-  overflow-x: clip;
 }
 .story #place .cloud {
   position: relative;
@@ -452,11 +451,6 @@ div.other-characters {
   transform: translateY(0);
 }
 
-/* Section Studio Koukaki */
-.studio {
-  background-image: url(../images/purple_studio_bg.png);
-}
-
 /* NOMINATION OSCARS */
 .oscars {
   position: relative;
@@ -466,7 +460,6 @@ div.other-characters {
   gap: 40px 0;
   justify-content: center;
   align-items: center;
-  overflow-x: clip;
 }
 
 .oscars__image {
@@ -524,12 +517,12 @@ div.other-characters {
   }
 }
 @media (max-width: 330px) {
-  .studio {
+  #studio h2 {
     font-size: 1.9rem;
   }
 }
 @media (min-width: 331px) and (max-width: 471px) {
-  .studio {
+  #studio h2 {
     font-size: 2.1rem;
   }
 }

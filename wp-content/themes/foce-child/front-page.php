@@ -43,7 +43,7 @@ get_header();
     </section>
     <span id="studio"></span>
     <section class="hidden appear fade-in-down">
-        <h2>
+        <h2 class="studio">
             <div class="animatedElement effet_move-up">
                 Studio Koukaki
             </div>

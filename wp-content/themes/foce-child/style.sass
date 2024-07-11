@@ -1,8 +1,8 @@
 
 /* GLOBAL */
 
-.site-main
-  overflow: hidden
+// .site-main
+//   overflow: hidden
 
   /* TITRE DU SITE */
 
@@ -165,6 +165,7 @@
   position: relative
   object-fit: contain
   height: 800px
+  overflow-x: clip
 
   .banner_video
     position: absolute
@@ -375,6 +376,7 @@ div.other-characters
   display: flex
   position: relative
   object-fit: contain
+  overflow-x: clip
   .cloud
     position: relative
     left: 165px // Position initiale pour tous les nuages
@@ -414,6 +416,10 @@ div.other-characters
   opacity: 1
   transform: translateY(0)
 
+/* Section Studio Koukaki */
+.studio
+  background-image: url(../images/purple_studio_bg.png)
+
 /* NOMINATION OSCARS */
 
 .oscars
@@ -424,6 +430,7 @@ div.other-characters
   gap: 40px 0
   justify-content: center
   align-items: center
+  overflow-x: clip
 
 .oscars__image
   margin-top: -82px
@@ -471,14 +478,12 @@ div.other-characters
     right: 1em
 
 @media (max-width: 330px)
-  #studio
-    h2
-      font-size: 1.9rem
+  .studio
+    font-size: 1.9rem
 
 @media (min-width: 331px) and (max-width: 471px)
-  #studio
-    h2
-      font-size: 2.1rem
+  .studio
+    font-size: 2.1rem
 
 @media (max-width: 356px)
   .oscars__title
@@ -522,10 +527,6 @@ div.other-characters
 @media (max-width: 630px)
   #site-title-homepage
     width: 187px
-
-// @media (max-width: 1440px)
-//   .cloud-animation
-//     overflow: inherit
 
 @media screen
   .main-navigation
