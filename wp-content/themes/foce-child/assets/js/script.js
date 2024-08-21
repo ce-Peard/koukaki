@@ -1,5 +1,7 @@
 jQuery(document).ready(function ($) {
+  /*************/
   /*MENU BURGER*/
+  /*************/
 
   // Sélection des éléments nécessaires
   const icone_menuBurger = document.querySelector(".icone_menu-burger");
@@ -52,7 +54,10 @@ jQuery(document).ready(function ($) {
     });
   });
 
-  // Initialize Swiper
+  /*******************/
+  /*INITIALIZE SWIPER*/
+  /*******************/
+
   var swiper = new Swiper(".swiper-container", {
     effect: "coverflow",
     spaceBetween: 60,
@@ -79,7 +84,9 @@ jQuery(document).ready(function ($) {
     },
   });
 
-  // SCROLL NUAGES
+  /***************/
+  /*SCROLL NUAGES*/
+  /***************/
 
   let lastScrollPosition = 0;
   //stocke la dernière position de défilement de la fenêtre. Initialement fixée à 0
@@ -119,7 +126,9 @@ jQuery(document).ready(function ($) {
   //ajout d'un écouteur d'événement à la fenêtre pour appeler la fonction animateCloudsOnScroll à chaque fois que l'utilisateur fait défiler la page
 }); /* Fin de la balise jQuery */
 
-// animation fade-in des sections
+/******************/
+/*FADE-IN SECTIONS*/
+/******************/
 
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll(".appear"); //récuperer ttes les sections avec la classe appear
