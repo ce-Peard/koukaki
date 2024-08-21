@@ -1,5 +1,7 @@
 @charset "UTF-8";
-/* GLOBAL */
+/***************/
+/*TITRE DU SITE*/ 
+/***************/
 #site-title-homepage {
   height: 100%;
   display: flex;
@@ -41,7 +43,7 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* menu burger ouvert*/
+/* menu burger ouvert */
 .menu_ouvert {
   position: relative;
   background-color: #FFF5E9;
@@ -150,9 +152,6 @@
   animation: float 9s 120ms infinite ease-in-out;
 }
 
-.menu_ouvert_studio {
-  /* effets hover sur les liens*/
-}
 .menu_ouvert_studio::before {
   content: url("../images/cat3.png");
   position: absolute;
@@ -167,7 +166,9 @@
   bottom: -892%;
 }
 
-/* ANIMATION VIDEO */
+/*****************/
+/*ANIMATION VIDEO*/
+/*****************/
 .banner {
   display: flex;
   position: relative;
@@ -230,7 +231,9 @@
   }
 }
 
-/* FADE IN SECTIONS */
+/********************/
+/*FADE IN DES TITRES*/
+/********************/
 .effet_move-up {
   animation: move-up 2s 300ms both;
 }
@@ -244,16 +247,10 @@
   }
 }
 
-/* ANIMATION TITRES */
-@keyframes move-up {
-  0% {
-    transform: translateY(600px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
+/*******************/
+/*ANIMATIONS FLEURS*/
+/*******************/
+/* Définition des animations */
 @keyframes rotateSunflower2 {
   from {
     transform: rotate(0deg);
@@ -339,8 +336,9 @@
   animation: rotateHibiscus_footer 10s linear infinite;
 }
 
-/* SLIDER */
-/* Section personnages */
+/****************************/
+/*SLIDER SECTION PERSONNAGES*/
+/****************************/
 #characters {
   margin: 6em;
   display: flex;
@@ -399,7 +397,9 @@ div.other-characters {
      object-fit: cover;
 }
 
-/* ANIMATION NUAGES */
+/******************/
+/*ANIMATION NUAGES*/
+/******************/
 .story #place {
   background-image: url("../images/Studio_Koukaki-image_place.png");
   z-index: 10;
@@ -429,7 +429,9 @@ div.other-characters {
   opacity: 0.8;
 }
 
-/* effet de fade-in des sections */
+/**********************/
+/*FADE-IN DES SECTIONS*/
+/**********************/
 .fade-in-up {
   opacity: 0;
   transform: translateY(100px);
@@ -452,12 +454,16 @@ div.other-characters {
   transform: translateY(0);
 }
 
-/* Section Studio Koukaki */
+/************************/
+/*SECTION STUDIO KOUKAKI*/
+/************************/
 .studio {
   background-image: url(../images/purple_studio_bg.png);
 }
 
-/* NOMINATION OSCARS */
+/***************************/
+/*SECTION NOMINATION OSCARS*/
+/***************************/
 .oscars {
   position: relative;
   padding-top: 90px;
@@ -517,7 +523,9 @@ div.other-characters {
   display: none;
 }
 
-/* MEDIA QUERY */
+/*************/
+/*MEDIA QUERY*/
+/*************/
 @media (max-width: 320px) {
   .menu-burger {
     right: 1em;

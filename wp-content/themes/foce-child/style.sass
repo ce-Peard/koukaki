@@ -1,10 +1,7 @@
 
-/* GLOBAL */
-
-// .site-main
-//   overflow: hidden
-
-  /* TITRE DU SITE */
+/***************/
+/*TITRE DU SITE*/ 
+/***************/
 
 #site-title-homepage
   height: 100%
@@ -26,16 +23,16 @@
 
 .menu-burger
   width: 40px
-  height: 30px // Hauteur du menu burger
+  height: 30px
   position: absolute
   right: 5em
   cursor: pointer
 
   .trait1, .trait2, .trait3
     width: 100%
-    height: 2px // Épaisseur des traits
-    background-color: #000 // Couleur des traits
-    margin: 6px 0 // Espace entre les traits
+    height: 2px
+    background-color: #000
+    margin: 6px 0
 
   &.crossed
     .trait1
@@ -45,7 +42,7 @@
     .trait3
       transform: rotate(-45deg) translate(5px, -5px)
 
-/* menu burger ouvert*/
+/* menu burger ouvert */
 
 .menu_ouvert
   position: relative
@@ -56,7 +53,7 @@
   font-size: 4rem
   overflow: hidden
   display: none
-  opacity: 0 // Définir l'opacité à 0 par défaut
+  opacity: 0
   transition: opacity 2s
   justify-content: flex-start
   text-align: center
@@ -101,6 +98,7 @@
   margin-top: -90px
 
 /* animations menu ouvert*/
+
 .menu_ouvert_histoire, .menu_ouvert_personnages, .menu_ouvert_lieu, .menu_ouvert_studio
   position: relative
 
@@ -111,7 +109,6 @@
     right: 66%
     bottom: -18.5%
     animation: float 7s 100ms infinite ease-in-out
-    // transform: scale(0.3)
   &::after
     content: url("../images/Sunflower.png")
     position: absolute
@@ -156,9 +153,9 @@
     left: 75%
     bottom: -892%
 
-  /* effets hover sur les liens*/
-
-/* ANIMATION VIDEO */
+/*****************/
+/*ANIMATION VIDEO*/
+/*****************/
 
 .banner
   display: flex
@@ -218,7 +215,10 @@
     100%
       transform: translate3d(6px,6px,0)
 
-/* FADE IN SECTIONS */
+/********************/
+/*FADE IN DES TITRES*/
+/********************/
+
 .effet_move-up
   animation: move-up 2s 300ms both
 
@@ -230,19 +230,11 @@
     100%
       transform: translateY(0)
 
-/* ANIMATION TITRES */
+/*******************/
+/*ANIMATIONS FLEURS*/
+/*******************/
 
-@keyframes move-up
-  0%
-    transform: translateY(600px)
-    opacity: 0
-
-  100%
-    transform: translateY(0)
-
-// ROTATION FLEURS
-
-// Définition des animations
+/* Définition des animations */
 
 @keyframes rotateSunflower2
   from
@@ -316,9 +308,10 @@
 .site-footer ul::after, .menu_ouvert_studio::after
   animation: rotateHibiscus_footer 10s linear infinite
 
-/* SLIDER */
+/****************************/
+/*SLIDER SECTION PERSONNAGES*/
+/****************************/
 
-/* Section personnages */
 #characters
   margin: 6em
   display: flex
@@ -368,7 +361,9 @@ div.other-characters
   width: 100%
   object-fit: cover
 
-/* ANIMATION NUAGES */
+/******************/
+/*ANIMATION NUAGES*/
+/******************/
 
 .story #place
   background-image: url('../images/Studio_Koukaki-image_place.png')
@@ -396,7 +391,9 @@ div.other-characters
     filter: blur(10px)
     opacity: 0.8
 
-/* effet de fade-in des sections */
+/**********************/
+/*FADE-IN DES SECTIONS*/
+/**********************/
 
 .fade-in-up
   opacity: 0
@@ -416,11 +413,16 @@ div.other-characters
   opacity: 1
   transform: translateY(0)
 
-/* Section Studio Koukaki */
+/************************/
+/*SECTION STUDIO KOUKAKI*/
+/************************/
+
 .studio
   background-image: url(../images/purple_studio_bg.png)
 
-/* NOMINATION OSCARS */
+/***************************/
+/*SECTION NOMINATION OSCARS*/
+/***************************/
 
 .oscars
   position: relative
@@ -471,7 +473,9 @@ div.other-characters
 .site-footer::after
   display: none
 
-/* MEDIA QUERY */
+/*************/
+/*MEDIA QUERY*/
+/*************/
 
 @media (max-width: 320px)
   .menu-burger
